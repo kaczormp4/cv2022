@@ -3,6 +3,9 @@
         "target": "es6",
         "module": "es6",
         "strict": true,
-        "jsx": "react"
+        "jsx": "react",
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true
     }
 }
