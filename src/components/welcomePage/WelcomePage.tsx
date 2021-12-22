@@ -1,10 +1,10 @@
 import * as React from 'react';
-// import './WelcomePage.scss';
+import './WelcomePage.scss';
 
 const WelcomePage: React.FC = () => {
     return (
         <div className="WelcomePageContainer">
-            HI
+            <div className="title">I AM BK :)</div>
         </div>
     )
 }
