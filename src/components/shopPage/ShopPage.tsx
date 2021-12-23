@@ -1,9 +1,12 @@
 import * as React from 'react';
 import './ShopPage.scss';
 import LeftMenuNavi from './components/LeftMenuNavi/LeftMenuNavi';
-import { BsBellFill } from 'react-icons/bs';
-import { FiMail } from 'react-icons/fi';
-import { FcSearch } from 'react-icons/fc';
+import SearchbarAndNavi from './components/SearchbarAndNavi/SearchbarAndNavi';
+import HomeView from './components/HomeView/HomeView';
+import CategoriesView from './components/CategoriesView/CategoriesView';
+import CartView from './components/CartView/CartView';
+import { Routes, Route } from "react-router-dom";
+import SettingViews from './components/SettingsView/SettingViews';
 
 const ShopPage = () => {
     return (
@@ -11,22 +14,16 @@ const ShopPage = () => {
             <div className="SP_MainWiew">
                 <LeftMenuNavi />
                 <div className="rightContentContainer">
-                    <div className="navContainer">
-                        <div className="navContent">
-                            <div className="searchEngine">
-                                <input type="search"></input><div><FcSearch /></div>
-                            </div>
-                            <div className="rightNavPanel">
-                                <div className="iconBox">
-                                    <FiMail /> <BsBellFill />
-                                </div>
-                                <div className="miniUserPhoto"></div>
-                                <div className="navUserInfo">Jan Kowalski</div>
-                            </div>
-                        </div>
+                    <SearchbarAndNavi />
+                    <div className="ContentMainBox">
+                        <Routes>
+                            <Route path="/" element={<HomeView />} />
+                            <Route path="/shopcategories" element={<CategoriesView />} />
+                            <Route path="/shopcart" element={<CartView />} />
+                            <Route path="/shopsettings" element={<SettingViews />} />
+                        </Routes>
                     </div>
                 </div>
-
             </div>
         </div>
     )

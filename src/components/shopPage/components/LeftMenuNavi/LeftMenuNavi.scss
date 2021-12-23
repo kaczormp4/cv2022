@@ -23,15 +23,12 @@ $bgColor: #121212;
 .shopLogo {
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
   .text {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
     color: gray;
     font-size: 1.4rem;
   }
@@ -57,16 +54,28 @@ $bgColor: #121212;
   padding: 30px;
   font-size: 1.4rem;
   & li {
-    background-color: rgb(255, 255, 255);
     margin-top: 20px;
     padding: 10px;
     border-radius: 10px;
-    & > span {
-        margin-left: 10px;
+
+    & span {
+      margin-left: 25px;
     }
     &:hover {
-      background-color: rgb(71, 71, 71);
+      background-color: rgb(255, 255, 255);
       cursor: pointer;
     }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  a:link,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: grey;
   }
 }
