@@ -1,25 +1,16 @@
 import * as React from 'react';
+import { FC } from 'react';
 import './HomeView.scss';
 import { BiRightArrow, BiLeftArrow, BiPlusCircle, BiMinusCircle } from 'react-icons/bi';
-import { FcOldTimeCamera } from 'react-icons/fc';
-const HomeView = () => {
-    const miniBox = <>
-        <div className="ProductMiniBox">
-            <div className="ProductImg"><FcOldTimeCamera /></div>
-            <div className="ProductDesc">
-                <span>CAMERA</span>
-                <span>557$</span>
-            </div>
-            <div className="ProductAddToCart">
-                <span>ADD TO CART</span>
-                {/* <div>
-                    <BiMinusCircle/>
-                    <input type="number"></input>
-                    <BiPlusCircle/>
-                </div> */}
-            </div>
-        </div>
-    </>
+import ProductMiniBox from '../ProductMiniBox/ProductMiniBox';
+import products from '../../data/products';
+
+const vievedHistoryIds = [1, 2, 4, 6];
+
+const HomeView: FC = () => {
+    const dealsOftheDay = products.filter((product) => product.price < 100);
+    const exclusiveOffers = products.filter((product) => product.price > 2000);
+    const recentlyViewed = products.filter((product) => vievedHistoryIds.some((i) => product.id === i));
 
     return (
         <>
@@ -31,9 +22,17 @@ const HomeView = () => {
                 </div>
             </div>
             <div className="Products">
-                {miniBox}
-                {miniBox}
-                {miniBox}
+                {dealsOftheDay.map((product) =>
+                    <ProductMiniBox
+                        id={product.id}
+                        name={product.name}
+                        description={product.description}
+                        category={product.category}
+                        price={product.price}
+                        availablePieces={product.availablePieces}
+                        image={product.image}
+                    />
+                )}
             </div>
             <div className="Categories">
                 <span>Exclusive offers</span>
@@ -43,12 +42,17 @@ const HomeView = () => {
                 </div>
             </div>
             <div className="Products">
-                {miniBox}
-                {miniBox}
-                {miniBox}
-                {miniBox}
-                {miniBox}
-
+                {exclusiveOffers.map((product) =>
+                    <ProductMiniBox
+                        id={product.id}
+                        name={product.name}
+                        description={product.description}
+                        category={product.category}
+                        price={product.price}
+                        availablePieces={product.availablePieces}
+                        image={product.image}
+                    />
+                )}
             </div>
             <div className="Categories">
                 <span>Recently viewed by you</span>
@@ -58,11 +62,17 @@ const HomeView = () => {
                 </div>
             </div>
             <div className="Products">
-                {miniBox}
-                {miniBox}
-                {miniBox}
-                {miniBox}
-                {miniBox}
+                {recentlyViewed.map((product) =>
+                    <ProductMiniBox
+                        id={product.id}
+                        name={product.name}
+                        description={product.description}
+                        category={product.category}
+                        price={product.price}
+                        availablePieces={product.availablePieces}
+                        image={product.image}
+                    />
+                )}
             </div>
         </>
     )

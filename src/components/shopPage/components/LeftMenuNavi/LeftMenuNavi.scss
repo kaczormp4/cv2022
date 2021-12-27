@@ -14,10 +14,31 @@ $bgColor: #121212;
   flex-wrap: wrap;
 }
 .leftMenuClose {
-  width: 20%;
+  width: 30%;
   height: 100%;
   background-color: $bgColor;
   border-radius: $border-radius;
+  display: flex;
+  flex-wrap: wrap;
+  & .ulContainer {
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & span {
+      margin-left: 0px;
+      display: none;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }
 
 .shopLogo {
@@ -50,14 +71,22 @@ $bgColor: #121212;
   box-sizing: border-box;
   list-style-type: none;
   width: 100%;
-  height: 500px;
+  height: 100%;
   padding: 30px;
   font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
   & li {
     margin-top: 20px;
     padding: 10px;
     border-radius: 10px;
-
+    & svg,
+    img {
+      width: 1.4rem;
+      height: 1.4rem;
+      min-width: 1.4rem;
+      min-height: 1.4rem;
+    }
     & span {
       margin-left: 25px;
     }
@@ -71,6 +100,10 @@ $bgColor: #121212;
     align-items: center;
     width: 100%;
   }
+  & li:last-child {
+    margin-top: auto;
+    font-size: 1.1rem;
+  }
   a:link,
   a:hover,
   a:visited,
@@ -79,3 +112,11 @@ $bgColor: #121212;
     color: grey;
   }
 }
+
+// @media only screen and (max-width: 600px) {
+//   .leftMenuOpen {
+//     width: 100vw;
+//     height: 5rem;
+//     bottom: 0;
+//   }
+// }

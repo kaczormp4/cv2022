@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FC, useState } from 'react';
 import './LeftMenuNavi.scss';
 import { AiFillHome } from 'react-icons/ai';
-import { BiCategory } from 'react-icons/bi';
+import { BiCategory, BiLogOut } from 'react-icons/bi';
 import { RiShoppingBasket2Line } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -26,9 +26,10 @@ const LeftMenuNavi: FC = () => {
                                 <li><Link to="shopcategories"><BiCategory /><span>CATEGORIES</span></Link></li>
                                 <li><Link to="shopcart"><RiShoppingBasket2Line /><span>CART</span></Link></li>
                                 <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
+                                <li><Link to="logout"><BiLogOut /><span>LOG OUT</span></Link></li>
                             </ul>
                         </div>
-                        <div className="closeAndOpenConstainer"><IoIosArrowBack /></div>
+                        {/* <div className="closeAndOpenConstainer"><IoIosArrowBack /></div> */}
                     </div>
                     :
                     <div className="leftMenuClose">
