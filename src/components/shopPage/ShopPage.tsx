@@ -3,10 +3,11 @@ import './ShopPage.scss';
 import LeftMenuNavi from './components/LeftMenuNavi/LeftMenuNavi';
 import SearchbarAndNavi from './components/SearchbarAndNavi/SearchbarAndNavi';
 import HomeView from './components/HomeView/HomeView';
+import MainInfoView from './components/MainInfoView/MainInfoView';
 import CategoriesView from './components/CategoriesView/CategoriesView';
 import CartView from './components/CartView/CartView';
 import SortedAndFiltredViev from './components/SortedAndFiltredViev/SortedAndFiltredViev';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import SettingViews from './components/SettingsView/SettingViews';
 import { FC } from 'react';
 
@@ -19,9 +20,10 @@ const ShopPage: FC = () => {
                     <SearchbarAndNavi />
                     <div className="ContentMainBox">
                         <Routes>
-                            <Route path="/" element={<HomeView />} />
+                            <Route path="/" element={<MainInfoView />} />
+                            <Route path="/home" element={<HomeView />} />
                             <Route path="/shopcategories" element={<CategoriesView />} >
-                                {/* <Route path=":CategoryId" element={<SortedAndFiltredViev />} /> */}
+                                <Route path=":categoryId" element={<SortedAndFiltredViev />} />
                             </Route>
                             <Route path="/shopcart" element={<CartView />} />
                             <Route path="/shopsettings" element={<SettingViews />} />

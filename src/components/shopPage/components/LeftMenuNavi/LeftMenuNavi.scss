@@ -52,6 +52,13 @@ $bgColor: #121212;
     align-items: center;
     color: gray;
     font-size: 1.4rem;
+    a:link,
+    a:hover,
+    a:visited,
+    a:active {
+      text-decoration: none;
+      color: grey;
+    }
   }
 }
 .closeAndOpenConstainer {

@@ -2,6 +2,8 @@ import * as React from 'react';
 import { FC } from 'react';
 import './ProductMiniBox.scss';
 import { VscCircleSlash } from 'react-icons/vsc';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, selectDateStart } from '../../../../redux/userCartReducer';
 
 interface ProductProps {
     id: number,
@@ -14,6 +16,12 @@ interface ProductProps {
 }
 
 const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
+    const dispatch = useDispatch();
+    const data = useSelector(selectDateStart);
+    const addToCartHandleClick = () => {
+        dispatch(addToCart());
+    };
+    console.log(data);
     return (
         <div className="ProductMiniBox">
             <div className="ProductImg">{props.image === null ? <VscCircleSlash /> : props.image}</div>
@@ -21,7 +29,7 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
                 <span>{props.name}</span>
                 <span>{props.price}$</span>
             </div>
-            <div className="ProductAddToCart">
+            <div className="ProductAddToCart" onClick={addToCartHandleClick}>
                 <span>ADD TO CART</span>
                 {/* <div>
                     <BiMinusCircle/>

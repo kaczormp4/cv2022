@@ -18,11 +18,15 @@ const LeftMenuNavi: FC = () => {
                 {fullMenu ?
                     <div className="leftMenuOpen">
                         <div className="shopLogo">
-                            <div className="text"><RiShoppingBasket2Line />MyFavShop</div>
+                            <div className="text">
+                                <Link to="/">
+                                    <RiShoppingBasket2Line />MyFavShop
+                                </Link>
+                            </div>
                         </div>
                         <div className="listConstainer">
                             <ul className="ulContainer">
-                                <li><Link to="/"><AiFillHome /><span>HOME</span></Link></li>
+                                <li><Link to="home"><AiFillHome /><span>HOME</span></Link></li>
                                 <li><Link to="shopcategories"><BiCategory /><span>CATEGORIES</span></Link></li>
                                 <li><Link to="shopcart"><RiShoppingBasket2Line /><span>CART</span></Link></li>
                                 <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
