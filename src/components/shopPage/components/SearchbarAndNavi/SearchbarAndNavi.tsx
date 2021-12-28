@@ -4,9 +4,10 @@ import { FiMail } from 'react-icons/fi';
 import { FcSearch } from 'react-icons/fc';
 import './SearchbarAndNavi.scss';
 import { Link } from "react-router-dom";
+import { FC } from 'react';
 
 
-const SearchbarAndNavi = () => {
+const SearchbarAndNavi: FC = () => {
     return (
         <div className="navContainer">
             <div className="navContent">

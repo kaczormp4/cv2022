@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { FC } from 'react';
 
-const CartView = () => {
+const CartView: FC = () => {
     return (
         <div>
             CartView

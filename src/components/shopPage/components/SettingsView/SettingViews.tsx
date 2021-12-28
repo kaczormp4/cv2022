@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { FC } from 'react';
 
-const SettingViews = () => {
+const SettingViews: FC = () => {
     return (
         <div>
             SettingViews

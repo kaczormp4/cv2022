@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FcOldTimeCamera, FcClock, FcCompactCamera, FcSimCard } from 'react-icons/fc';
+import { FaCar } from 'react-icons/fa';
 
 interface Products {
     id: number,
@@ -8,7 +9,7 @@ interface Products {
     category: string
     price: number,
     availablePieces: number,
-    image: null | any;
+    image: null | any,
 }
 
 const products: Products[] = [
@@ -55,7 +56,7 @@ const products: Products[] = [
         category: 'cars',
         price: 7200,
         availablePieces: 2,
-        image: null,
+        image: <FaCar/>,
     },
     {
         id: 6,
