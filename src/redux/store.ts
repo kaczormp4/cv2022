@@ -3,7 +3,7 @@ import userCartReducer from "./userCartReducer";
 
 const rootReducer = combineReducers(
     {
-        userEvents: userCartReducer,
+        userCart: userCartReducer,
     }
 );
 

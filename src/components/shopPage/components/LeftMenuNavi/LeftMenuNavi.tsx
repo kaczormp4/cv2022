@@ -7,10 +7,12 @@ import { RiShoppingBasket2Line } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from "react-router-dom";
-
+import { useSelector } from 'react-redux';
+import { selectUserCart } from '../../../../redux/userCartReducer';
 
 const LeftMenuNavi: FC = () => {
     const [fullMenu, setFullMenu]: any = useState(true);
+    const { counter } = useSelector(selectUserCart);
 
     return (
         <>
@@ -28,7 +30,13 @@ const LeftMenuNavi: FC = () => {
                             <ul className="ulContainer">
                                 <li><Link to="home"><AiFillHome /><span>HOME</span></Link></li>
                                 <li><Link to="shopcategories"><BiCategory /><span>CATEGORIES</span></Link></li>
-                                <li><Link to="shopcart"><RiShoppingBasket2Line /><span>CART</span></Link></li>
+                                <li>
+                                    <Link to="shopcart">
+                                        <RiShoppingBasket2Line />
+                                        <span>CART</span>
+                                        <span className="Counter">{counter > 0 && counter}</span>
+                                    </Link>
+                                </li>
                                 <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
                                 <li><Link to="logout"><BiLogOut /><span>LOG OUT</span></Link></li>
                             </ul>

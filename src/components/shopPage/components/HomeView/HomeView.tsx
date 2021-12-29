@@ -24,6 +24,7 @@ const HomeView: FC = () => {
             <div className="Products">
                 {dealsOftheDay.map((product) =>
                     <ProductMiniBox
+                        key={product.id}
                         id={product.id}
                         name={product.name}
                         description={product.description}
@@ -31,6 +32,7 @@ const HomeView: FC = () => {
                         price={product.price}
                         availablePieces={product.availablePieces}
                         image={product.image}
+                        boxButtonType={'addToCart'}
                     />
                 )}
             </div>
@@ -44,6 +46,7 @@ const HomeView: FC = () => {
             <div className="Products">
                 {exclusiveOffers.map((product) =>
                     <ProductMiniBox
+                        key={product.id}
                         id={product.id}
                         name={product.name}
                         description={product.description}
@@ -51,6 +54,7 @@ const HomeView: FC = () => {
                         price={product.price}
                         availablePieces={product.availablePieces}
                         image={product.image}
+                        boxButtonType={'addToCart'}
                     />
                 )}
             </div>
@@ -64,6 +68,7 @@ const HomeView: FC = () => {
             <div className="Products">
                 {recentlyViewed.map((product) =>
                     <ProductMiniBox
+                        key={product.id}
                         id={product.id}
                         name={product.name}
                         description={product.description}
@@ -71,6 +76,7 @@ const HomeView: FC = () => {
                         price={product.price}
                         availablePieces={product.availablePieces}
                         image={product.image}
+                        boxButtonType={'addToCart'}
                     />
                 )}
             </div>

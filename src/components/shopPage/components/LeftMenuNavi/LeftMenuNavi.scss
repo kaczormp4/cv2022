@@ -97,6 +97,14 @@ $bgColor: #121212;
     & span {
       margin-left: 25px;
     }
+    .Counter {
+      margin-left: 20px;
+      color: white;
+      background-color: red;
+      padding-left: 6px;
+      padding-right: 6px;
+      border-radius: 20px;
+    }
     &:hover {
       background-color: rgb(255, 255, 255);
       cursor: pointer;

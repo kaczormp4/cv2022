@@ -7,6 +7,7 @@
   margin-right: 25px;
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
+  margin-bottom: 20px;
   .ProductImg {
     width: 200px;
     height: 120px;
@@ -45,17 +46,22 @@
       color: white;
       cursor: pointer;
     }
-    // &>div{
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     &>input {
-    //         width:20px;
-    //     }
-    //     &>svg,img {
-    //         font-size: 1.2rem;
-    //     }
-    // }
+  }
+  .ProductAddOrRemove {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    & > input {
+      width: 30%;
+      height: 1.4rem;
+    }
+    & > svg,
+    img {
+      font-size: 1.4rem;
+      &:hover {
+        color: rgb(28, 106, 224);
+      }
+    }
   }
   &:hover {
     cursor: pointer;

@@ -19,6 +19,7 @@ const CategoriesView: FC = () => {
                 {
                     categories.map(category =>
                         <CategoryMiniBox
+                            key={category.id}
                             id={category.id}
                             category={category.category}
                             image={category.image}
