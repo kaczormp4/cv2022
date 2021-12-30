@@ -46,7 +46,7 @@ const products: Products[] = [
         description: 'new Sim Card',
         category: 'devices',
         price: 10,
-        availablePieces: 1,
+        availablePieces: 100,
         image: <FcSimCard />,
     },
     {
@@ -56,7 +56,7 @@ const products: Products[] = [
         category: 'cars',
         price: 7200,
         availablePieces: 2,
-        image: <FaCar/>,
+        image: <FaCar />,
     },
     {
         id: 6,

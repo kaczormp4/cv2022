@@ -6,23 +6,38 @@ import products from '../../data/products';
 import './CartView.scss';
 import { selectUserCart } from '../../../../redux/userCartReducer';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const CartView: FC = () => {
     const { inCart } = useSelector(selectUserCart);
-    console.log(inCart);
     const addedToCart = products.filter(
         allProducts => inCart.some((product: { productID: number; }) => product.productID === allProducts.id));
 
+    let totalPrice: number = 0;
+    addedToCart.forEach((p: { id: number, price: number }) => {
+        inCart.forEach((e: { productID: number, amount: number }) => {
+            if (p.id === e.productID) {
+                totalPrice += p.price * e.amount
+            }
+        });
+    });
 
+    // only if arrays lengths are the same
+    // addedToCart.forEach(p => totalPrice += p.price * inCart.find((e: { id: number; }) => p.id === e.id).amount);
     return (
         <>
             <div className="Cart">
                 <span>CART</span>
                 <div className="arrowBox">
-                    <BiLeftArrow />
-                    <BiRightArrow />
+                    {/* <BiLeftArrow />
+                    <BiRightArrow /> */}
+                    TOTAL PRICE: {totalPrice}$
                 </div>
             </div>
+            {
+                addedToCart.length === 0 &&
+                    <div>Your Cart is empty, go to <Link to='/home'>HOME</Link> and add something :)</div>
+            }
             <div className="CartVievBox">
                 {
                     addedToCart.map((product) =>
@@ -36,7 +51,6 @@ const CartView: FC = () => {
                             availablePieces={product.availablePieces}
                             image={product.image}
                             boxButtonType={'addOrRemove'}
-                            numOfItems={inCart[0].amount}
                         />
                     )
                 }

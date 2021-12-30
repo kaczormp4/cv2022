@@ -5,6 +5,7 @@ import { VscCircleSlash } from 'react-icons/vsc';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, selectUserCart } from '../../../../redux/userCartReducer';
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
+import { ImCancelCircle } from 'react-icons/im';
 
 interface ProductProps {
     id: number,
@@ -15,19 +16,18 @@ interface ProductProps {
     availablePieces: number,
     image: null | any,
     boxButtonType?: string,
-    numOfItems?: number,
 }
 
 const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
-    const data = useSelector(selectUserCart);
-    // console.log(data);
+    const { inCart } = useSelector(selectUserCart);
+    const numOfItems = inCart.filter((p: { productID: number; }) => p.productID === props.id);
 
     const dispatch = useDispatch();
     const addToCartHandleClick = () => {
-        dispatch(addToCart());
+        dispatch(addToCart(props.id));
     };
     const removeFromCartHandleClick = () => {
-        dispatch(removeFromCart());
+        dispatch(removeFromCart(props.id));
     };
 
     let footerSection = null;
@@ -42,8 +42,14 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
         case 'addOrRemove':
             footerSection = <>
                 <div className="ProductAddOrRemove">
-                    <BiMinusCircle onClick={removeFromCartHandleClick} />
-                    <input type="number" value={props.numOfItems}></input>/ {props.availablePieces}
+                    {
+                        numOfItems[0].amount === 0 ?
+                            <ImCancelCircle onClick={removeFromCartHandleClick} className="deleteProduct"/>
+                            : <BiMinusCircle onClick={removeFromCartHandleClick} />
+                    }
+
+                    {/* <input type="number" value={numOfItems[0].amount}></input> //NEW FUTURE  */}
+                    {numOfItems[0].amount} / {props.availablePieces}
                     <BiPlusCircle onClick={addToCartHandleClick} />
                 </div>
             </>

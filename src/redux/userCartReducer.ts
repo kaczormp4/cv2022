@@ -3,36 +3,50 @@ const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
 // actions
-export const addToCart = () => ({
+export const addToCart = (id: number) => ({
     type: ADD_TO_CART,
+    payload: { id: id }
 })
-export const removeFromCart = () => ({
+export const removeFromCart = (id: number) => ({
     type: REMOVE_FROM_CART,
+    payload: { id: id }
 })
 
 export const selectUserCart = (rootState: any) => rootState.userCart;
 
 //reducer
 const initialState = {
-    inCart: [
-        {
-            productID: 1,
-            amount: 0,
-        },
-        {
-            productID: 3,
-            amount: 10,
-        }
-    ],
-    totalPrice: 0,
+    inCart: [],
     counter: 0
 }
 const userCartReducer = (state: any = initialState, action: any) => {
+    console.log('action', action);
+    console.log('state', state);
     switch (action.type) {
         case ADD_TO_CART:
-            return { ...state, counter: state.counter + 1 };
+            let newState: object = {};
+            if (state.inCart.some((p: { productID: number; }) => p.productID === action.payload.id)) {
+                // in card View
+                state.inCart.map((p: { productID: number, amount: number }) => p.productID === action.payload.id && p.amount++)
+                newState = { ...state }
+            } else {
+                state.inCart.push({ productID: action.payload.id, amount: 1 })
+                newState = { ...state }
+            }
+
+            return { ...newState, counter: state.counter + 1 };
         case REMOVE_FROM_CART:
-            return { ...state, counter: state.counter - 1 }
+            let newStateRFC: object = {};
+            if (state.inCart.some((p: { productID: number, amount: number }) => p.productID === action.payload.id && p.amount > 0)) {
+                state.inCart.map((p: { productID: number, amount: number }) => p.productID === action.payload.id && p.amount--)
+                newStateRFC = { ...state }
+            } else {
+                const updates = state.inCart.filter(
+                    (p: { productID: number, amount: number }) => p.productID !== action.payload.id && p.amount !== 0)
+                newStateRFC = { ...state, inCart: updates }
+            }
+
+            return { ...newStateRFC, counter: state.counter - 1 };
         default:
             return state;
     }
