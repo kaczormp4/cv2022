@@ -38,7 +38,7 @@ const LeftMenuNavi: FC = () => {
                                     </Link>
                                 </li>
                                 <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
-                                <li><Link to="logout"><BiLogOut /><span>LOG OUT</span></Link></li>
+                                <li><Link to="/"><BiLogOut /><span>LOG OUT</span></Link></li>
                             </ul>
                         </div>
                         {/* <div className="closeAndOpenConstainer"><IoIosArrowBack /></div> */}

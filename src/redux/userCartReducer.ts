@@ -20,14 +20,12 @@ const initialState = {
     counter: 0
 }
 const userCartReducer = (state: any = initialState, action: any) => {
-    console.log('action', action);
-    console.log('state', state);
     switch (action.type) {
         case ADD_TO_CART:
             let newState: object = {};
             if (state.inCart.some((p: { productID: number; }) => p.productID === action.payload.id)) {
                 // in card View
-                state.inCart.map((p: { productID: number, amount: number }) => p.productID === action.payload.id && p.amount++)
+                state.inCart.map((p: { productID: number, amount: number }) => p.productID === action.payload.id && ++p.amount)
                 newState = { ...state }
             } else {
                 state.inCart.push({ productID: action.payload.id, amount: 1 })
@@ -38,11 +36,11 @@ const userCartReducer = (state: any = initialState, action: any) => {
         case REMOVE_FROM_CART:
             let newStateRFC: object = {};
             if (state.inCart.some((p: { productID: number, amount: number }) => p.productID === action.payload.id && p.amount > 0)) {
-                state.inCart.map((p: { productID: number, amount: number }) => p.productID === action.payload.id && p.amount--)
+                state.inCart.map((p: { productID: number, amount: number }) => p.productID === action.payload.id && --p.amount)
                 newStateRFC = { ...state }
             } else {
                 const updates = state.inCart.filter(
-                    (p: { productID: number, amount: number }) => p.productID !== action.payload.id && p.amount !== 0)
+                    (p: { productID: number }) => (p.productID !== action.payload.id))
                 newStateRFC = { ...state, inCart: updates }
             }
 

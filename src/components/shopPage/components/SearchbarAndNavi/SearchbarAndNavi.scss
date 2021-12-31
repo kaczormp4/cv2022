@@ -14,11 +14,13 @@ $bgColor: #121212;
 }
 .searchEngine {
   box-shadow: 0 0 2px $bgColor;
-  display: flex;
-  flex-wrap: wrap;
   border-radius: 5px;
-  align-items: center;
-  & > input[type="search"] {
+  & > a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  & input[type="search"] {
     height: 50px;
     width: 400px;
     outline: none;
@@ -26,8 +28,9 @@ $bgColor: #121212;
     border-radius: 5px;
     font-size: 1.4rem;
     color: gray;
+    padding-left: 10px;
   }
-  & > div {
+  & div {
     font-size: 1.8rem;
     color: gray;
     display: flex;
@@ -55,7 +58,6 @@ $bgColor: #121212;
     border-radius: 50px;
     background-color: gray;
     margin-right: 20px;
-    background-image: url("https://www.sweetdecor.pl/oplatek-na-tort-nosacz-janusz-00584a-21-cm.1.jpg");
     background-position: center;
     background-size: cover;
   }

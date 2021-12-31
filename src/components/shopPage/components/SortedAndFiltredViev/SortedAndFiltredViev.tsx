@@ -5,35 +5,54 @@ import { BiRightArrow, BiLeftArrow, BiPlusCircle, BiMinusCircle } from 'react-ic
 import ProductMiniBox from '../ProductMiniBox/ProductMiniBox';
 import products from '../../data/products';
 import { useParams } from 'react-router-dom';
+import { selectSearchEngine } from '../../../../redux/searchEngineReducer';
+import { useSelector } from 'react-redux';
+import { addToCart } from '../../../../redux/userCartReducer';
 
 const SortedAndFiltredViev: FC = () => {
-    let params = useParams();
-    return <h1>Invoice {params.categoryId}</h1>;
-    // const dealsOftheDay = products.filter((product) => product.price < 100);
-    // return (
-    //     <>
-    //         <div className="Categories">
-    //             <span>Deals of the day</span>
-    //             <div className="arrowBox">
-    //                 <BiLeftArrow />
-    //                 <BiRightArrow />
-    //             </div>
-    //         </div>
-    //         <div className="Products">
-    //             {dealsOftheDay.map((product) =>
-    //                 <ProductMiniBox
-    //                     id={product.id}
-    //                     name={product.name}
-    //                     description={product.description}
-    //                     category={product.category}
-    //                     price={product.price}
-    //                     availablePieces={product.availablePieces}
-    //                     image={product.image}
-    //                 />
-    //             )}
-    //         </div>
-    //     </>
-    // )
+    // let params = useParams();
+    // return <h1>{params.categoryId}</h1>;
+    const typedTextInSearchEngine = useSelector(selectSearchEngine);
+    const filteredProducts = products.filter((product) => {
+        if (typedTextInSearchEngine !== '') {
+            return (
+                product.name.toLowerCase().includes(typedTextInSearchEngine) 
+                || product.description.toLowerCase().includes(typedTextInSearchEngine)
+                || product.category.toLowerCase().includes(typedTextInSearchEngine)
+            )
+        }
+        return true;
+    });
+
+    return (
+        <>
+            <div className="Categories">
+                {
+                    typedTextInSearchEngine === '' ?
+                        <span>Type Text in Search Engine</span>
+                        : <span>Search results from: {typedTextInSearchEngine}</span>
+                }
+                <div className="arrowBox">
+                    {/* <BiLeftArrow />
+                    <BiRightArrow /> */}
+                </div>
+            </div>
+            <div className="Products">
+                {filteredProducts.map((product) =>
+                    <ProductMiniBox
+                        id={product.id}
+                        name={product.name}
+                        description={product.description}
+                        category={product.category}
+                        price={product.price}
+                        availablePieces={product.availablePieces}
+                        image={product.image}
+                        boxButtonType={'addToCart'}
+                    />
+                )}
+            </div>
+        </>
+    )
 }
 
 export default SortedAndFiltredViev

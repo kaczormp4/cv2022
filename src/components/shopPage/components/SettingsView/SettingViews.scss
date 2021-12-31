@@ -1,0 +1,46 @@
+$border-radius: 50px;
+$bgColor: #121212;
+
+.navContainer {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+}
+.userInfo {
+  width: 50%;
+  font-size: 2rem;
+  color: gray;
+  .userInfoOneLine {
+    display: flex;
+    align-items: center;
+    .desc {
+      margin-right: 10px;
+    }
+    .editInfo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      input {
+        height: 2rem;
+        font-size: 2rem;
+        width: 400px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        color: gray;
+        padding-left: 10px;
+        box-shadow: 0px 0px 5px $bgColor;
+        width: 250px;
+      }
+      span {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+.userPhoto {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 10px rgb(110, 110, 110);
+}

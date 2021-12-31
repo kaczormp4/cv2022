@@ -22,9 +22,10 @@ const ShopPage: FC = () => {
                         <Routes>
                             <Route path="/" element={<MainInfoView />} />
                             <Route path="/home" element={<HomeView />} />
-                            <Route path="/shopcategories" element={<CategoriesView />} >
+                            {/* <Route path="/shopcategories" element={<CategoriesView />} >
                                 <Route path=":categoryId" element={<SortedAndFiltredViev />} />
-                            </Route>
+                            </Route> */}
+                            <Route path="/shopcategories" element={<SortedAndFiltredViev />}/>
                             <Route path="/shopcart" element={<CartView />} />
                             <Route path="/shopsettings" element={<SettingViews />} />
                         </Routes>
