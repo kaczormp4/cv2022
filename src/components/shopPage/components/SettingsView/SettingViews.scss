@@ -15,6 +15,7 @@ $bgColor: #121212;
     align-items: center;
     .desc {
       margin-right: 10px;
+      min-width: 200px;
     }
     .editInfo {
       display: flex;
@@ -31,9 +32,6 @@ $bgColor: #121212;
         padding-left: 10px;
         box-shadow: 0px 0px 5px $bgColor;
         width: 250px;
-      }
-      span {
-        min-width: 150px;
       }
     }
   }
