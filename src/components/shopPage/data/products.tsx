@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { FcOldTimeCamera, FcClock, FcCompactCamera, FcSimCard } from 'react-icons/fc';
+import { FcOldTimeCamera, FcClock, FcCompactCamera, FcSimCard, FcCamcorderPro, FcVideoProjector } from 'react-icons/fc';
 import { FaCar } from 'react-icons/fa';
+import { GiLargeDress } from 'react-icons/gi';
 
 interface Products {
     id: number,
@@ -74,7 +75,25 @@ const products: Products[] = [
         category: 'clothes',
         price: 55,
         availablePieces: 25,
-        image: null,
+        image: <GiLargeDress/>,
+    },
+    {
+        id: 8,
+        name: 'Cam Pro',
+        description: 'old Cam Pro',
+        category: 'devices',
+        price: 2255,
+        availablePieces: 2,
+        image: <FcCamcorderPro/>,
+    },
+    {
+        id: 9,
+        name: 'Video Projector',
+        description: 'old VideoProjector',
+        category: 'devices',
+        price: 2155,
+        availablePieces: 22,
+        image: <FcVideoProjector/>,
     }
 ]
 

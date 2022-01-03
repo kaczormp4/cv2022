@@ -3,8 +3,25 @@ $bgColor: #121212;
 
 .navContainer {
   width: 100%;
-  padding-top: 20px;
   display: flex;
+  flex-wrap: wrap;
+}
+.editInfo {
+  width: 100%;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: rgb(241, 241, 241);
+  }
 }
 .userInfo {
   width: 50%;
@@ -36,9 +53,47 @@ $bgColor: #121212;
     }
   }
 }
-
-.userPhoto {
-  width: 300px;
-  height: 300px;
-  box-shadow: 0 0 10px rgb(110, 110, 110);
+.staticUserInfo {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  .userPhoto {
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    &:hover {
+      box-shadow: 0 0 10px rgb(110, 110, 110);
+    }
+  }
+  .userMainInfoContainer {
+    padding: 1rem;
+    color: gray;
+    height: 300px;
+    .bold {
+      font-weight: bold;
+      color: black;
+      font-size: 2rem;
+    }
+  }
+  .userScndInfoContainer {
+    padding: 1rem;
+    color: gray;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .sectionTitle {
+      font-size: 2rem;
+      width: 100%;
+    }
+    .bold {
+      font-weight: bold;
+      color: rgb(39, 39, 39);
+      font-size: 1.5rem;
+    }
+    > div {
+      width: 50%;
+    }
+  }
 }

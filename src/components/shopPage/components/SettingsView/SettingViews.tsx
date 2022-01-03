@@ -3,8 +3,11 @@ import { FC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editRecordInUserProfile, selectUserProfile } from '../../../../redux/userProfileReducer';
 import './SettingViews.scss';
+import { GrEdit } from 'react-icons/gr';
+import { MdOutlineEditOff } from 'react-icons/md';
 
 const SettingViews: FC = () => {
+    const [editInfo, setEditinfo] = useState<boolean>(false)
     const user = useSelector(selectUserProfile)
 
     const dispatch = useDispatch();
@@ -17,9 +20,16 @@ const SettingViews: FC = () => {
     };
     return (
         <div className="navContainer">
-            <div className="userInfo">
+            <div className="editInfo" onClick={(e: React.MouseEvent<HTMLElement>) => setEditinfo(!editInfo)}>
+                {
+                    !editInfo ?
+                        <>  EDIT INFO <GrEdit /></>
+                        : <>  CLOSE  EDIT MODE <MdOutlineEditOff /></>
+                }
+            </div>
+            {editInfo && <div className="userInfo">
                 <div className="userInfoOneLine">
-                    <div className="desc">Nick Name: </div>
+                    <div className="desc">Nick&nbsp;Name: </div>
                     <div className="editInfo">
                         <input
                             type="text"
@@ -128,8 +138,51 @@ const SettingViews: FC = () => {
                         />
                     </div>
                 </div>
+                <div className="userInfoOneLine">
+                    <div className="desc">Photo URL: </div>
+                    <div className="editInfo">
+                        <input
+                            type="text"
+                            value={user.photoUrl}
+                            onChange={changeTextInInput}
+                            name="photoUrl"
+                        />
+                    </div>
+                </div>
             </div>
-            <div className="userPhoto" style={miniUserPhoto}></div>
+            }
+            <div className="staticUserInfo">
+                <div className="userPhoto" style={miniUserPhoto}></div>
+                <div className="userMainInfoContainer">
+                    <span>Nick Name:</span>
+                    <p className="bold">{user.username}</p>
+                    <span>Name:</span>
+                    <p className="bold">{user.name}</p>
+                    <span>Surname:</span>
+                    <p className="bold">{user.surname}</p>
+                    <span>Website:</span>
+                    <p className="bold">{user.website}</p>
+                </div>
+                <div className="userScndInfoContainer">
+                    <p className="sectionTitle">Address and contact information</p>
+                    <div>
+                        <span>Phone Number: </span>
+                        <p className="bold">{user.phone}</p>
+                        <span>EMAIL: </span>
+                        <p className="bold">{user.email}</p>
+                        <span>Suite: </span>
+                        <p className="bold">{user.suite}</p>
+                    </div>
+                    <div>
+                        <span>Street:  </span>
+                        <p className="bold">{user.street}</p>
+                        <span>City:  </span>
+                        <p className="bold">{user.city}</p>
+                        <span>Zip Code:  </span>
+                        <p className="bold">{user.zipcode}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
