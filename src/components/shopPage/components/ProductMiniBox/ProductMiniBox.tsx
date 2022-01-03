@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, selectUserCart } from '../../../../redux/userCartReducer';
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
 import { ImCancelCircle } from 'react-icons/im';
+import { openModalByProductId } from '../../../../redux/modalReducer';
 
 interface ProductProps {
     id: number,
@@ -29,6 +30,9 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
     const removeFromCartHandleClick = () => {
         dispatch(removeFromCart(props.id));
     };
+    const openFullViewInModal = () => {
+        dispatch(openModalByProductId(props.id));
+    }
 
     let footerSection = null;
     switch (props.boxButtonType) {
@@ -44,7 +48,7 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
                 <div className="ProductAddOrRemove">
                     {
                         numOfItems[0].amount === 0 ?
-                            <ImCancelCircle onClick={removeFromCartHandleClick} className="deleteProduct"/>
+                            <ImCancelCircle onClick={removeFromCartHandleClick} className="deleteProduct" />
                             : <BiMinusCircle onClick={removeFromCartHandleClick} />
                     }
 
@@ -60,7 +64,7 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
     }
 
     return (
-        <div className="ProductMiniBox">
+        <div className="ProductMiniBox" onClick={openFullViewInModal}>
             <div className="ProductImg">{props.image === null ? <VscCircleSlash /> : props.image}</div>
             <div className="ProductDesc">
                 <span>{props.name}</span>
