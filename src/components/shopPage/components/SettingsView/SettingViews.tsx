@@ -20,7 +20,7 @@ const SettingViews: FC = () => {
     };
     return (
         <div className="navContainer">
-            <div className="editInfo" onClick={(e: React.MouseEvent<HTMLElement>) => setEditinfo(!editInfo)}>
+            <div className="editInfoBar" onClick={(e: React.MouseEvent<HTMLElement>) => setEditinfo(!editInfo)}>
                 {
                     !editInfo ?
                         <>  EDIT INFO <GrEdit /></>
