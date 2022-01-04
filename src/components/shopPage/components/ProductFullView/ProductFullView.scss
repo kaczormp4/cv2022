@@ -1,0 +1,105 @@
+$animationDuration: 1.5s;
+
+.FullViewContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.LargePhoto {
+  height: 50%;
+  width: 50%;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  > svg,
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  &FullView {
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    > svg,
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.MainDesc {
+  height: 50%;
+  width: 50%;
+  text-align: left;
+  animation-name: turnOff;
+  animation-duration: $animationDuration;
+  > p {
+    color: rgb(175, 175, 175);
+    margin-top: 20px;
+    &:first-of-type {
+      margin-top: 0px;
+    }
+  }
+}
+.DescAndInfo {
+  height: 50%;
+  width: 50%;
+  animation-name: turnOff;
+  animation-duration: $animationDuration;
+}
+.AddToCart {
+  height: 50%;
+  width: 50%;
+  font-size: 2rem;
+  animation-name: turnOff;
+  animation-duration: $animationDuration;
+  .priceBox {
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+    > h2 {
+      color: red;
+      margin-left: 20px;
+    }
+  }
+  .buttonsBox {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: flex-end;
+    font-size: 4rem;
+    & > div {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      > svg,
+      img {
+        &:hover {
+          cursor: pointer;
+          color: rgb(28, 106, 224);
+        }
+      }
+    }
+  }
+}
+
+.displayNone {
+  display: none;
+}
+@keyframes turnOff {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

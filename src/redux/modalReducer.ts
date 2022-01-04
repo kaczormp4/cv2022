@@ -1,21 +1,35 @@
 // consts
-const MODAL_STATE = 'OPEN_CLOSE_MODAL';
+const OPEN_MODAL = 'OPEN_MODAL';
+const CLOSE_MODAL = 'CLOSE_MODAL';
 
 
 // actions
-export const openModalByProductId = (id: number) => ({
-    type: MODAL_STATE,
-    payload: id
+export const openModalByProductId = (bool: boolean, id: number) => ({
+    type: OPEN_MODAL,
+    payload: { bool, id }
 })
 
+export const closeModal = (bool: boolean) => ({
+    type: CLOSE_MODAL,
+    payload: { bool }
+})
 export const selectmodalReducer = (rootState: any) => rootState.modalReducer;
 
 //reducer
-
-const modalReducer = (state: boolean = false, action: any) => {
+interface initState {
+    bool: boolean,
+    id: number | null
+}
+const initialState: initState = {
+    bool: false,
+    id: null
+}
+const modalReducer = (state: initState = initialState, action: any) => {
     switch (action.type) {
-        case MODAL_STATE:
-            console.log(`action`, action)
+        case OPEN_MODAL:
+            state = action.payload
+            return state;
+        case CLOSE_MODAL:
             state = action.payload
             return state;
         default:

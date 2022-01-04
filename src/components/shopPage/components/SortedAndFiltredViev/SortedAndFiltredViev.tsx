@@ -7,7 +7,6 @@ import products from '../../data/products';
 import { useParams } from 'react-router-dom';
 import { selectSearchEngine } from '../../../../redux/searchEngineReducer';
 import { useSelector } from 'react-redux';
-import { addToCart } from '../../../../redux/userCartReducer';
 
 const SortedAndFiltredViev: FC = () => {
     // let params = useParams();
@@ -16,7 +15,7 @@ const SortedAndFiltredViev: FC = () => {
     const filteredProducts = products.filter((product) => {
         if (typedTextInSearchEngine !== '') {
             return (
-                product.name.toLowerCase().includes(typedTextInSearchEngine) 
+                product.name.toLowerCase().includes(typedTextInSearchEngine)
                 || product.description.toLowerCase().includes(typedTextInSearchEngine)
                 || product.category.toLowerCase().includes(typedTextInSearchEngine)
             )

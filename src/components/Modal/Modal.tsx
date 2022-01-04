@@ -3,10 +3,18 @@ import { FC, useEffect, useRef } from 'react';
 import * as ReactDOM from 'react-dom';
 import './Modal.scss';
 import { IoMdCloseCircle } from 'react-icons/io';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModal, selectmodalReducer } from '../../redux/modalReducer';
 
 const ModalElement = document.getElementById('modal') as HTMLElement;
 
-const Modal: FC = ({ children, isOpen, handleOnClose }: any) => {
+const Modal: FC = ({ children }: any) => {
+    const isOpen = useSelector(selectmodalReducer);
+
+    const dispatch = useDispatch();
+    const handleOnClose = () => {
+        dispatch(closeModal(false));
+    };
     const modalRef = useRef<any>(null);
     const previousActiveElement = useRef<any>(null);
 
@@ -16,14 +24,14 @@ const Modal: FC = ({ children, isOpen, handleOnClose }: any) => {
         }
         const { current: modal } = modalRef;
 
-        if (isOpen) {
+        if (isOpen.bool) {
             // previousActiveElement.current = document.activeElement;
             modal.showModal();
         } else {
-            modal.close()
+            modal.close();
             // previousActiveElement.current.focus();
         }
-    }, [isOpen])
+    }, [isOpen.bool])
 
     useEffect(() => {
         const { current: modal } = modalRef;

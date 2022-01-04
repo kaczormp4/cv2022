@@ -31,7 +31,7 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
         dispatch(removeFromCart(props.id));
     };
     const openFullViewInModal = () => {
-        dispatch(openModalByProductId(props.id));
+        dispatch(openModalByProductId(true, props.id));
     }
 
     let footerSection = null;
@@ -64,11 +64,13 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
     }
 
     return (
-        <div className="ProductMiniBox" onClick={openFullViewInModal}>
-            <div className="ProductImg">{props.image === null ? <VscCircleSlash /> : props.image}</div>
-            <div className="ProductDesc">
-                <span>{props.name}</span>
-                <span>{props.price}$</span>
+        <div className="ProductMiniBox">
+            <div onClick={openFullViewInModal}>
+                <div className="ProductImg" >{props.image === null ? <VscCircleSlash /> : props.image}</div>
+                <div className="ProductDesc">
+                    <span>{props.name}</span>
+                    <span>{props.price}$</span>
+                </div>
             </div>
             {footerSection}
         </div>
