@@ -13,8 +13,6 @@ const ProductFullView: FC = () => {
 
     const { inCart } = useSelector(selectUserCart);
     const numOfItems = inCart.filter((p: { productID: number; }) => p.productID === id);
-    console.log(numOfItems[0]?.amount);
-
 
     const dispatch = useDispatch();
     const addToCartHandleClick = () => {

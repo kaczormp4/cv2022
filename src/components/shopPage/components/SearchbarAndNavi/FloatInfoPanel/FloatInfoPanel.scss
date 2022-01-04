@@ -1,0 +1,49 @@
+.floatInfoPanel {
+  width: 200px;
+  top: 50px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  // box-shadow: 0 0 8px rgb(184, 184, 184);
+  .floatInfoPanelRow {
+    position: relative;
+    top: 0;
+    width: 200px;
+    border-radius: 10px;
+    border-bottom: 1px solid lightgrey;
+    box-shadow: 0 0 8px rgb(184, 184, 184);
+    margin-top: 20px;
+    > div {
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+      & > svg,
+      img {
+        color: lightgrey;
+        margin-left: 5px;
+      }
+      > span {
+        color: grey;
+        margin-left: 10px;
+      }
+    }
+    .floatInfoPanelContext {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+      color: lightgrey;
+      > p {
+        width: 100%;
+        font-size: 1.3rem;
+        text-align: center;
+        color: rgb(73, 73, 73);
+        margin-bottom: 10px;
+      }
+      > span {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
