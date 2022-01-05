@@ -1,0 +1,62 @@
+// PRIVATE VARIABLES
+$PRIVATE_BLACK: #121212;
+$PRIVATE_LIGHT_GREY: rgb(184, 184, 184);
+
+// BACKGROUND COLOR
+$mainBackgroundColor: white;
+$scndBackgroundColor: black;
+
+// FONT COLOR
+$mainFontColor: grey;
+$priceFontColor: red;
+$sectionFontColor: rgb(28, 106, 224);
+$blackFontColor: black;
+$whiteFontColor: white;
+
+// PADDING
+$paddingSmall: 10px;
+$paddingMedium: 20px;
+$paddinglarge: 30px;
+
+// MARGIN
+$marginSmall: 10px;
+$marginMedium: 20px;
+$marginMediumPlus: 25px;
+
+// FONT SIZE
+$superLargeFontSize: 4rem;
+$largeFontSize: 2rem;
+$sectionFontSize: 1.8rem;
+$descFontSize: 1.6rem;
+$mediumFontSize: 1.4rem;
+$smallFontSize: 1.1rem;
+
+// SHADOW
+$darkBoxShadow: 0 0 10px $PRIVATE_BLACK;
+$lightBoxShadow: 0 0 8px $PRIVATE_LIGHT_GREY;
+$inputBoxShadow: 0 0 2px $PRIVATE_BLACK;
+$inputBoxShadowFOCUS: 0px 0px 5px $PRIVATE_BLACK;
+
+// WIDTH
+$miniBoxWidth: 200px;
+$categoryImgWidth: 200px;
+
+// HEIGHT
+$miniBoxHeight: 200px;
+$categoryImgHeight: 160px;
+$prdctImgHeight: 120px;
+
+// RADIUS
+$borderRadius: 50px;
+$borderRadiusSmall: 20px;
+$borderRadius10: 10px;
+$borderRadius5: 5px;
+
+// SVG, IMG SQUARE
+$svgImgSize: 140px;
+$svgImgSizeMedium: 120px;
+$svgImgSizeRem: 1.4rem;
+
+// ANIMATION DURATION:
+$longAnimationDuration: 1.5s;
+$sQuickAnimationDuration: 0.3s;

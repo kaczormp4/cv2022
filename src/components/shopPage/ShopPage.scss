@@ -1,5 +1,4 @@
-$border-radius: 50px;
-$bgColor: #121212;
+@import "../../variables/shopPage.scss";
 
 .ShopPageContainer {
   width: 100%;
@@ -11,8 +10,8 @@ $bgColor: #121212;
 .SP_MainWiew {
   width: 95%;
   height: 90%;
-  box-shadow: 0 0 10px $bgColor;
-  border-radius: $border-radius;
+  box-shadow: $darkBoxShadow;
+  border-radius: $borderRadius;
   box-sizing: border-box;
   display: flex;
 }
@@ -25,7 +24,7 @@ $bgColor: #121212;
   width: 100%;
   box-sizing: border-box;
   height: calc(100% - 160px);
-  padding: 20px;
+  padding: $paddingMedium;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

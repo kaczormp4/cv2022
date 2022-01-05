@@ -1,5 +1,4 @@
-$border-radius: 50px;
-$bgColor: #121212;
+@import "../../variables/shopPage.scss";
 
 .ModalOverlay {
   height: 100%;
@@ -7,7 +6,7 @@ $bgColor: #121212;
   position: fixed;
   left: 0;
   top: 0;
-  background-color: black;
+  background-color: $scndBackgroundColor;
   z-index: 999;
   border: 0;
   margin: 0;
@@ -20,12 +19,12 @@ $bgColor: #121212;
   margin: 0 auto;
   text-align: center;
   margin-top: 30px;
-  color: gray;
-  background-color: white;
+  color: $mainFontColor;
+  background-color: $mainBackgroundColor;
   width: 60%;
   height: 90%;
-  box-shadow: 0 0 10px $bgColor;
-  border-radius: $border-radius;
+  box-shadow: $darkBoxShadow;
+  border-radius: $borderRadius;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +34,7 @@ $bgColor: #121212;
   display: flex;
   justify-content: flex-end;
   font-size: 4rem;
-  color: red;
+  color: $priceFontColor;
   > img,
   svg {
     transition-duration: 1s;

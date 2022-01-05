@@ -1,22 +1,24 @@
+@import "../../../../variables/shopPage.scss";
+
 .ProductMiniBox {
-  width: 200px;
-  height: 200px;
-  box-shadow: 0 0 8px rgb(184, 184, 184);
-  border-radius: 20px;
-  color: gray;
-  margin-right: 25px;
-  transition-duration: 0.25s;
+  width: $miniBoxWidth;
+  height: $miniBoxHeight;
+  box-shadow: $lightBoxShadow;
+  border-radius: $borderRadiusSmall;
+  color: $mainFontColor;
+  margin-right: $marginMediumPlus;
+  transition-duration: $sQuickAnimationDuration;
   transition-timing-function: ease-in-out;
-  margin-bottom: 20px;
+  margin-bottom: $marginMedium;
   .ProductImg {
-    width: 200px;
-    height: 120px;
+    width: $miniBoxWidth;
+    height: $prdctImgHeight;
     display: flex;
     justify-content: center;
     img,
     svg {
-      width: 120px;
-      height: 120px;
+      width: $svgImgSizeMedium;
+      height: $svgImgSizeMedium;
     }
   }
   .ProductDesc {
@@ -25,10 +27,10 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $paddingSmall;
+    padding-right: $paddingSmall;
     span:nth-child(2) {
-      color: red;
+      color: $priceFontColor;
     }
   }
   .ProductAddToCart {
@@ -40,10 +42,10 @@
     justify-content: center;
     align-items: center;
     border-top: 1px solid lightgrey;
-    color: rgb(28, 106, 224);
+    color: $sectionFontColor;
     &:hover {
-      background-color: rgb(28, 106, 224);
-      color: white;
+      background-color: $sectionFontColor;
+      color: $whiteFontColor;
       cursor: pointer;
     }
   }
@@ -52,11 +54,11 @@
     justify-content: space-evenly;
     align-items: center;
     .deleteProduct {
-      color: red;
+      color: $priceFontColor;
       &:hover {
-        background-color: red;
-        color: black;
-        border-radius: 50px;
+        background-color: $priceFontColor;
+        color: $blackFontColor;
+        border-radius: $borderRadius;
       }
     }
     & > input {
@@ -65,14 +67,14 @@
     }
     & > svg,
     img {
-      font-size: 1.4rem;
+      font-size: $mediumFontSize;
       &:hover {
-        color: rgb(28, 106, 224);
+        color: $sectionFontColor;
       }
     }
   }
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px rgb(110, 110, 110);
+    box-shadow: $lightBoxShadow;
   }
 }

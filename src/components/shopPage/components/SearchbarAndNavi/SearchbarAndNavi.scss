@@ -1,20 +1,19 @@
-$border-radius: 50px;
-$bgColor: #121212;
+@import "../../../../variables/shopPage.scss";
 
 .navContainer {
   width: 100%;
-  padding-top: 20px;
+  padding-top: $paddingMedium;
 }
 .navContent {
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: $paddingMedium;
   display: flex;
   justify-content: space-between;
 }
 .searchEngine {
-  box-shadow: 0 0 2px $bgColor;
-  border-radius: 5px;
+  box-shadow: $inputBoxShadow;
+  border-radius: $borderRadius5;
   & > a {
     display: flex;
     flex-wrap: wrap;
@@ -25,20 +24,20 @@ $bgColor: #121212;
     width: 400px;
     outline: none;
     border: none;
-    border-radius: 5px;
-    font-size: 1.4rem;
+    border-radius: $borderRadius5;
+    font-size: $mediumFontSize;
     color: gray;
-    padding-left: 10px;
+    padding-left: $paddingSmall;
   }
   & div {
-    font-size: 1.8rem;
-    color: gray;
+    font-size: $sectionFontSize;
+    color: $mainFontColor;
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: $marginSmall;
   }
   &:focus-within {
-    box-shadow: 0px 0px 5px $bgColor;
+    box-shadow: $inputBoxShadowFOCUS;
   }
 }
 .rightNavPanel {
@@ -47,25 +46,25 @@ $bgColor: #121212;
   align-items: center;
   .iconBox {
     display: flex;
-    font-size: 1.8rem;
+    font-size: $sectionFontSize;
     position: relative;
     & > svg,
     img {
-      margin-right: 20px;
+      margin-right: $marginMedium;
       cursor: pointer;
     }
   }
   .miniUserPhoto {
     width: 50px;
     height: 50px;
-    border-radius: 50px;
-    background-color: gray;
-    margin-right: 20px;
+    border-radius: $borderRadius;
+    background-color: $mainFontColor;
+    margin-right: $marginMedium;
     background-position: center;
     background-size: cover;
   }
   .navUserInfo {
-    color: gray;
+    color: $mainFontColor;
   }
   & > a {
     display: flex;

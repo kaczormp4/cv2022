@@ -1,5 +1,4 @@
-$border-radius: 50px;
-$bgColor: #121212;
+@import "../../../../variables/shopPage.scss";
 
 .navContainer {
   width: 100%;
@@ -17,21 +16,21 @@ $bgColor: #121212;
   user-select: none;
   display: flex;
   align-items: center;
-  padding-left: 20px;
-  margin-bottom: 20px;
+  padding-left: $paddingMedium;
+  margin-bottom: $marginMedium;
   &:hover {
     background-color: rgb(241, 241, 241);
   }
 }
 .userInfo {
   width: 50%;
-  font-size: 2rem;
-  color: gray;
+  font-size: $largeFontSize;
+  color: $mainFontColor;
   .userInfoOneLine {
     display: flex;
     align-items: center;
     .desc {
-      margin-right: 10px;
+      margin-right: $marginSmall;
       min-width: 200px;
     }
     .editInfo {
@@ -40,14 +39,14 @@ $bgColor: #121212;
       cursor: pointer;
       input {
         height: 2rem;
-        font-size: 2rem;
+        font-size: $largeFontSize;
         width: 400px;
         outline: none;
         border: none;
-        border-radius: 5px;
-        color: gray;
-        padding-left: 10px;
-        box-shadow: 0px 0px 5px $bgColor;
+        border-radius: $borderRadius5;
+        color: $mainFontColor;
+        padding-left: $paddingSmall;
+        box-shadow: $inputBoxShadow;
         width: 250px;
       }
     }
@@ -63,34 +62,34 @@ $bgColor: #121212;
     background-position: center;
     background-size: cover;
     &:hover {
-      box-shadow: 0 0 10px rgb(110, 110, 110);
+      box-shadow: $lightBoxShadow;
     }
   }
   .userMainInfoContainer {
     padding: 1rem;
-    color: gray;
+    color: $mainFontColor;
     height: 300px;
     .bold {
       font-weight: bold;
-      color: black;
-      font-size: 2rem;
+      color: $blackFontColor;
+      font-size: $largeFontSize;
     }
   }
   .userScndInfoContainer {
     padding: 1rem;
-    color: gray;
+    color: $mainFontColor;
     height: 300px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     .sectionTitle {
-      font-size: 2rem;
+      font-size: $largeFontSize;
       width: 100%;
     }
     .bold {
       font-weight: bold;
-      color: rgb(39, 39, 39);
-      font-size: 1.5rem;
+      color: $mainFontColor;
+      font-size: $descFontSize;
     }
     > div {
       width: 50%;

@@ -1,5 +1,4 @@
-$border-radius: 50px;
-$bgColor: #121212;
+@import "../../../../variables/shopPage.scss";
 
 .leftMenuContainer {
   width: 20%;
@@ -8,23 +7,23 @@ $bgColor: #121212;
 .leftMenuOpen {
   width: 100%;
   height: 100%;
-  background-color: $bgColor;
-  border-radius: $border-radius;
+  background-color: $scndBackgroundColor;
+  border-radius: $borderRadius;
   display: flex;
   flex-wrap: wrap;
 }
 .leftMenuClose {
   width: 30%;
   height: 100%;
-  background-color: $bgColor;
-  border-radius: $border-radius;
+  background-color: $scndBackgroundColor;
+  border-radius: $borderRadius;
   display: flex;
   flex-wrap: wrap;
   & .ulContainer {
     padding: 0px;
     width: 100%;
     height: 100%;
-    font-size: 1.4rem;
+    font-size: $mediumFontSize;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,65 +49,65 @@ $bgColor: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: gray;
-    font-size: 1.4rem;
+    color: $mainFontColor;
+    font-size: $mediumFontSize;
     a:link,
     a:hover,
     a:visited,
     a:active {
       text-decoration: none;
-      color: grey;
+      color: $mainFontColor;
     }
   }
 }
-.closeAndOpenConstainer {
-  width: 5%;
-  height: 500px;
-  color: white;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
+// .closeAndOpenConstainer {
+//   width: 5%;
+//   height: 500px;
+//   color: white;
+//   display: flex;
+//   align-items: center;
+//   cursor: pointer;
+// }
 .listConstainer {
   width: 95%;
   display: flex;
-  color: gray;
+  color: $mainFontColor;
 }
 .ulContainer {
   box-sizing: border-box;
   list-style-type: none;
   width: 100%;
   height: 100%;
-  padding: 30px;
-  font-size: 1.3rem;
+  padding: $paddinglarge;
+  font-size: $mediumFontSize;
   display: flex;
   flex-direction: column;
   & li {
-    margin-top: 20px;
-    border-radius: 10px;
+    margin-top: $marginMedium;
+    border-radius: $borderRadius10;
     & > a {
-      padding: 10px;
+      padding: $paddingSmall;
     }
     & svg,
     img {
-      width: 1.4rem;
-      height: 1.4rem;
-      min-width: 1.4rem;
-      min-height: 1.4rem;
+      width: $svgImgSizeRem;
+      height: $svgImgSizeRem;
+      min-width: $svgImgSizeRem;
+      min-height: $svgImgSizeRem;
     }
     & span {
-      margin-left: 20px;
+      margin-left: $marginMedium;
     }
     .Counter {
-      margin-left: 20px;
-      color: white;
-      background-color: red;
+      margin-left: $marginMedium;
+      color: $whiteFontColor;
+      background-color: $priceFontColor;
       padding-left: 6px;
       padding-right: 6px;
-      border-radius: 20px;
+      border-radius: $borderRadiusSmall;
     }
     &:hover {
-      background-color: rgb(255, 255, 255);
+      background-color: $mainBackgroundColor;
       cursor: pointer;
     }
   }
@@ -119,14 +118,14 @@ $bgColor: #121212;
   }
   & li:last-child {
     margin-top: auto;
-    font-size: 1.1rem;
+    font-size: $smallFontSize;
   }
   a:link,
   a:hover,
   a:visited,
   a:active {
     text-decoration: none;
-    color: grey;
+    color: $mainFontColor;
   }
 }
 

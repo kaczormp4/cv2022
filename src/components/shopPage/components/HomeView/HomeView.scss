@@ -1,16 +1,18 @@
+@import "../../../../variables/shopPage.scss";
+
 .Categories {
   width: 100%;
-  color: rgb(28, 106, 224);
+  color: $sectionFontColor;
   font-size: 1.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   .arrowBox {
-    font-size: 1.8rem;
+    font-size: $sectionFontSize;
     display: flex;
     align-items: center;
     & > svg:hover {
-      color: black;
+      color: $blackFontColor;
       cursor: pointer;
     }
   }
@@ -20,6 +22,6 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: $marginMedium;
+  margin-bottom: $marginMedium;
 }

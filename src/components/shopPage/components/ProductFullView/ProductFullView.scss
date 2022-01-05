@@ -1,4 +1,4 @@
-$animationDuration: 1.5s;
+@import "../../../../variables/shopPage.scss";
 
 .FullViewContainer {
   width: 100%;
@@ -10,7 +10,7 @@ $animationDuration: 1.5s;
 .LargePhoto {
   height: 50%;
   width: 50%;
-  transition-duration: 0.3s;
+  transition-duration: $sQuickAnimationDuration;
   transition-timing-function: ease-in-out;
   cursor: pointer;
   > svg,
@@ -21,7 +21,7 @@ $animationDuration: 1.5s;
   &FullView {
     height: 100%;
     width: 100%;
-    transition-duration: 0.3s;
+    transition-duration: $sQuickAnimationDuration;
     transition-timing-function: ease-in-out;
     cursor: pointer;
     > svg,
@@ -36,10 +36,10 @@ $animationDuration: 1.5s;
   width: 50%;
   text-align: left;
   animation-name: turnOff;
-  animation-duration: $animationDuration;
+  animation-duration: $longAnimationDuration;
   > p {
     color: rgb(175, 175, 175);
-    margin-top: 20px;
+    margin-top: $marginMedium;
     &:first-of-type {
       margin-top: 0px;
     }
@@ -49,22 +49,22 @@ $animationDuration: 1.5s;
   height: 50%;
   width: 50%;
   animation-name: turnOff;
-  animation-duration: $animationDuration;
+  animation-duration: $longAnimationDuration;
 }
 .AddToCart {
   height: 50%;
   width: 50%;
-  font-size: 2rem;
+  font-size: $largeFontSize;
   animation-name: turnOff;
-  animation-duration: $animationDuration;
+  animation-duration: $longAnimationDuration;
   .priceBox {
     width: 100%;
     display: flex;
 
     align-items: center;
     > h2 {
-      color: red;
-      margin-left: 20px;
+      color: $priceFontColor;
+      margin-left: $marginMedium;
     }
   }
   .buttonsBox {
@@ -72,7 +72,7 @@ $animationDuration: 1.5s;
     height: 70%;
     display: flex;
     align-items: flex-end;
-    font-size: 4rem;
+    font-size: $superLargeFontSize;
     & > div {
       width: 80%;
       display: flex;
@@ -82,7 +82,7 @@ $animationDuration: 1.5s;
       img {
         &:hover {
           cursor: pointer;
-          color: rgb(28, 106, 224);
+          color: $sectionFontColor;
         }
       }
     }
