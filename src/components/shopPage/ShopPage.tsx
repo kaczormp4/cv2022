@@ -10,6 +10,7 @@ import SortedAndFiltredViev from './components/SortedAndFiltredViev/SortedAndFil
 import { Routes, Route, useParams } from "react-router-dom";
 import SettingViews from './components/SettingsView/SettingViews';
 import { FC } from 'react';
+import CheckoutView from './components/CheckoutView/CheckoutView';
 
 const ShopPage: FC = () => {
     return (
@@ -25,9 +26,10 @@ const ShopPage: FC = () => {
                             {/* <Route path="/shopcategories" element={<CategoriesView />} >
                                 <Route path=":categoryId" element={<SortedAndFiltredViev />} />
                             </Route> */}
-                            <Route path="/shopcategories" element={<SortedAndFiltredViev />}/>
+                            <Route path="/shopcategories" element={<SortedAndFiltredViev />} />
                             <Route path="/shopcart" element={<CartView />} />
                             <Route path="/shopsettings" element={<SettingViews />} />
+                            <Route path="/checkout" element={<CheckoutView />} />
                         </Routes>
                     </div>
                 </div>

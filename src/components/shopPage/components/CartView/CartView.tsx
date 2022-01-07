@@ -32,11 +32,14 @@ const CartView: FC = () => {
                     {/* <BiLeftArrow />
                     <BiRightArrow /> */}
                     TOTAL PRICE: {totalPrice}$
+                    {
+                        totalPrice > 0 && <Link to='/checkout'><button>go to checkout</button></Link>
+                    }
                 </div>
             </div>
             {
                 addedToCart.length === 0 &&
-                    <div>Your Cart is empty, go to <Link to='/home'>HOME</Link> and add something :)</div>
+                <div className="CartVievDesc">Your Cart is empty, go to <Link to='/home'>HOME</Link> and add something :)</div>
             }
             <div className="CartVievBox">
                 {

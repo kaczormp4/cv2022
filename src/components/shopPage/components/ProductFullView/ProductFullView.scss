@@ -103,3 +103,11 @@
     opacity: 1;
   }
 }
+
+.Disabled {
+  color: $disableFontColor;
+  &:hover {
+    color: $disableFontColor !important;
+    cursor: not-allowed !important;
+  }
+}

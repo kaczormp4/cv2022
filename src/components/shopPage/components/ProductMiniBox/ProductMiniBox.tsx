@@ -38,9 +38,15 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
     switch (props.boxButtonType) {
         case 'addToCart':
             footerSection = <>
-                <div className="ProductAddToCart" onClick={addToCartHandleClick}>
-                    <span>ADD TO CART</span>
-                </div>
+                {
+                    numOfItems[0]?.amount === props.availablePieces ?
+                        <div className="ProductAddToCart Disabled">
+                            <span>ALL IN CART</span>
+                        </div>
+                        : <div className="ProductAddToCart" onClick={addToCartHandleClick}>
+                            <span>ADD TO CART</span>
+                        </div>
+                }
             </>
             break;
         case 'addOrRemove':
@@ -51,10 +57,13 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
                             <ImCancelCircle onClick={removeFromCartHandleClick} className="deleteProduct" />
                             : <BiMinusCircle onClick={removeFromCartHandleClick} />
                     }
-
                     {/* <input type="number" value={numOfItems[0].amount}></input> //NEW FUTURE  */}
                     {numOfItems[0].amount} / {props.availablePieces}
-                    <BiPlusCircle onClick={addToCartHandleClick} />
+                    {
+                        numOfItems[0].amount === props.availablePieces ?
+                            <BiPlusCircle className='Disabled' />
+                            : <BiPlusCircle onClick={addToCartHandleClick} />
+                    }
                 </div>
             </>
             break;

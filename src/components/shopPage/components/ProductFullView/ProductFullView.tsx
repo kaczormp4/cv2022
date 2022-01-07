@@ -56,12 +56,17 @@ const ProductFullView: FC = () => {
                 <div className="buttonsBox">
                     <div>
                         {
-                            <BiMinusCircle onClick={removeFromCartHandleClick} />
+                            numOfItems[0]?.amount < 1 || numOfItems[0]?.amount === undefined ?
+                                <BiMinusCircle className='Disabled' />
+                                : <BiMinusCircle onClick={removeFromCartHandleClick} />
                         }
-
                         {/* <input type="number" value={numOfItems[0].amount}></input> //NEW FUTURE  */}
                         {numOfItems[0]?.amount !== undefined ? numOfItems[0].amount : "0"} / {cp?.availablePieces}
-                        <BiPlusCircle onClick={addToCartHandleClick} />
+                        {
+                            numOfItems[0]?.amount === cp?.availablePieces ?
+                                <BiPlusCircle className='Disabled' />
+                                : <BiPlusCircle onClick={addToCartHandleClick} />
+                        }
                     </div>
                 </div>
             </div>

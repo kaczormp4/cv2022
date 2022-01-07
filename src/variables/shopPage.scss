@@ -5,6 +5,7 @@ $PRIVATE_LIGHT_GREY: rgb(184, 184, 184);
 // BACKGROUND COLOR
 $mainBackgroundColor: white;
 $scndBackgroundColor: black;
+$lightGreyBackgroundColor: lightgrey;
 
 // FONT COLOR
 $mainFontColor: grey;
@@ -12,8 +13,10 @@ $priceFontColor: red;
 $sectionFontColor: rgb(28, 106, 224);
 $blackFontColor: black;
 $whiteFontColor: white;
+$disableFontColor: lightgrey;
 
 // PADDING
+$paddingVSmall: 5px;
 $paddingSmall: 10px;
 $paddingMedium: 20px;
 $paddinglarge: 30px;

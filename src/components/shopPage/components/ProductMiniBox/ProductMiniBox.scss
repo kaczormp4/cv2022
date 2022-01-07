@@ -48,6 +48,11 @@
       color: $whiteFontColor;
       cursor: pointer;
     }
+    &.Disabled {
+      background-color: $mainBackgroundColor;
+      color: $disableFontColor;
+      cursor: pointer;
+    }
   }
   .ProductAddOrRemove {
     display: flex;
@@ -76,5 +81,13 @@
   &:hover {
     cursor: pointer;
     box-shadow: $lightBoxShadow;
+  }
+}
+
+.Disabled {
+  color: $disableFontColor;
+  &:hover {
+    color: $disableFontColor !important;
+    cursor: not-allowed;
   }
 }
