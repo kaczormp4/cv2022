@@ -13,18 +13,29 @@ export const closeModal = (bool: boolean) => ({
     type: CLOSE_MODAL,
     payload: { bool }
 })
-export const selectmodalReducer = (rootState: any) => rootState.modalReducer;
+
+interface rootState {
+    modalReducer: any
+}
+
+export const selectmodalReducer = (rootState: rootState) => rootState.modalReducer;
 
 //reducer
 interface initState {
     bool: boolean,
     id: number | null
 }
+
+interface actionInterface {
+    type: string,
+    payload: initState
+}
+
 const initialState: initState = {
     bool: false,
     id: null
 }
-const modalReducer = (state: initState = initialState, action: any) => {
+const modalReducer = (state: initState = initialState, action: actionInterface) => {
     switch (action.type) {
         case OPEN_MODAL:
             state = action.payload

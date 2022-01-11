@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FC } from 'react';
+import { FC, SVGAttributes } from 'react';
 import './CategoryMiniBox.scss';
 import { VscCircleSlash } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 interface CategoryProps {
     id: number,
     category: string
-    image: null | any,
+    image: null | SVGAttributes<SVGElement>,
 }
 
 const CategoryMiniBox: FC<CategoryProps> = (props: CategoryProps) => {

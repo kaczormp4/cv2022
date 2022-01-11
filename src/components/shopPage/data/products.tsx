@@ -2,6 +2,7 @@ import * as React from 'react';
 import { FcOldTimeCamera, FcClock, FcCompactCamera, FcSimCard, FcCamcorderPro, FcVideoProjector } from 'react-icons/fc';
 import { FaCar } from 'react-icons/fa';
 import { GiLargeDress } from 'react-icons/gi';
+import { SVGAttributes } from 'react';
 
 interface Products {
     id: number,
@@ -10,7 +11,7 @@ interface Products {
     category: string
     price: number,
     availablePieces: number,
-    image: null | any,
+    image: null | SVGAttributes<SVGElement>,
 }
 
 const products: Products[] = [
@@ -75,7 +76,7 @@ const products: Products[] = [
         category: 'clothes',
         price: 55,
         availablePieces: 25,
-        image: <GiLargeDress/>,
+        image: <GiLargeDress />,
     },
     {
         id: 8,
@@ -84,7 +85,7 @@ const products: Products[] = [
         category: 'devices',
         price: 2255,
         availablePieces: 2,
-        image: <FcCamcorderPro/>,
+        image: <FcCamcorderPro />,
     },
     {
         id: 9,
@@ -93,7 +94,7 @@ const products: Products[] = [
         category: 'devices',
         price: 2155,
         availablePieces: 22,
-        image: <FcVideoProjector/>,
+        image: <FcVideoProjector />,
     }
 ]
 

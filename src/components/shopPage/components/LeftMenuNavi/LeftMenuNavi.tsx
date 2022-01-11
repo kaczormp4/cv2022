@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 import { selectUserCart } from '../../../../redux/userCartReducer';
 
 const LeftMenuNavi: FC = () => {
-    const [fullMenu, setFullMenu]: any = useState(true);
+    const [fullMenu, setFullMenu] = useState<boolean>(true);
     const { counter } = useSelector(selectUserCart);
 
     return (

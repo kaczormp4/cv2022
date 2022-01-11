@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FC, useEffect, useRef } from 'react';
+import { FC, ReactNode, useEffect, useRef } from 'react';
 import * as ReactDOM from 'react-dom';
 import './Modal.scss';
 import { IoMdCloseCircle } from 'react-icons/io';
@@ -7,16 +7,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeModal, selectmodalReducer } from '../../redux/modalReducer';
 
 const ModalElement = document.getElementById('modal') as HTMLElement;
+interface ModalProps {
+    children: ReactNode
+}
 
-const Modal: FC = ({ children }: any) => {
+const Modal: FC<ModalProps> = ({ children }) => {
     const isOpen = useSelector(selectmodalReducer);
 
     const dispatch = useDispatch();
     const handleOnClose = () => {
         dispatch(closeModal(false));
     };
-    const modalRef = useRef<any>(null);
-    const previousActiveElement = useRef<any>(null);
+    const modalRef = useRef<any>(null); // HTMLDialogElement is deprecated
+    // const previousActiveElement = useRef<any>(null);
 
     useEffect(() => {
         if (!modalRef.current) {
@@ -35,7 +38,7 @@ const Modal: FC = ({ children }: any) => {
 
     useEffect(() => {
         const { current: modal } = modalRef;
-        const handleCancel = (e: any) => {
+        const handleCancel = (e: { preventDefault: () => void; }) => {
             e.preventDefault();
             handleOnClose();
         }
@@ -47,7 +50,7 @@ const Modal: FC = ({ children }: any) => {
         }
     }, [handleOnClose])
 
-    const handleOutsideClick = (e: any) => {
+    const handleOutsideClick = (e: { target: any; }) => {
         const { current } = modalRef;
 
         if (e.target === current) {

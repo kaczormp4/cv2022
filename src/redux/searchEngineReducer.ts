@@ -8,11 +8,18 @@ export const typeTextInSearchEngine = (text: string) => ({
     payload: text
 })
 
-export const selectSearchEngine = (rootState: any) => rootState.searchEngine;
+interface rootState {
+    searchEngine: string
+}
+export const selectSearchEngine = (rootState: rootState) => rootState.searchEngine;
 
 //reducer
+interface actionInterface {
+    type: string,
+    payload: string
+}
 
-const searchEngineReducer = (state: string = '', action: any) => {
+const searchEngineReducer = (state: string = '', action: actionInterface) => {
     switch (action.type) {
         case TYPE_TEXT:
             state = action.payload

@@ -1,3 +1,5 @@
+import { SVGAttributes } from "react";
+
 // consts
 const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
@@ -12,14 +14,37 @@ export const removeFromCart = (id: number) => ({
     payload: { id: id }
 })
 
-export const selectUserCart = (rootState: any) => rootState.userCart;
+interface rootState {
+    userCart: any;
+}
+
+export const selectUserCart = (rootState: rootState) => rootState.userCart;
 
 //reducer
-const initialState = {
+interface initState {
+    inCart: [],
+    counter: number
+}
+interface actionInterface {
+    type: string;
+    payload: { id: number }
+}
+interface stateInterface {
+    counter: number,
+    inCart: {
+        amount: number,
+        productID: number,
+    }[],
+}
+
+const initialState: initState = {
     inCart: [],
     counter: 0
 }
-const userCartReducer = (state: any = initialState, action: any) => {
+const userCartReducer = (state: stateInterface = initialState, action: actionInterface) => {
+    console.log(state);
+    console.log('action', action);
+
     switch (action.type) {
         case ADD_TO_CART:
             let newState: object = {};

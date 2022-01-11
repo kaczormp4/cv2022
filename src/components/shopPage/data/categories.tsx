@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { FcOldTimeCamera} from 'react-icons/fc';
+import { FcOldTimeCamera } from 'react-icons/fc';
 import { FaCarSide } from 'react-icons/fa';
 import { GiClothes } from 'react-icons/gi';
+import { SVGAttributes } from 'react';
 
 interface Categories {
     id: number,
     category: string,
-    image: null | any,
+    image: null | SVGAttributes<SVGElement>,
 }
 
 const categories: Categories[] = [
@@ -18,12 +19,12 @@ const categories: Categories[] = [
     {
         id: 2,
         category: 'cars',
-        image: <FaCarSide/>,
+        image: <FaCarSide />,
     },
     {
         id: 3,
         category: 'clothes',
-        image: <GiClothes/>,
+        image: <GiClothes />,
     },
 ]
 

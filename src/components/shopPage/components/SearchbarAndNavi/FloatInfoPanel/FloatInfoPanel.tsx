@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { FC, useState } from 'react';
+import { FC, SVGAttributes, useState } from 'react';
 import './FloatInfoPanel.scss';
 
 interface messages {
     recipient: string,
     topic: string,
     content: string,
-    icon: any
+    icon: SVGAttributes<SVGElement>
 }
 const FloatInfoPanel: FC<messages> = ({ recipient, topic, content, icon }: messages) => {
     const [infoPanelContextState, openInfoPanelContext] = useState<boolean>(false);

@@ -8,10 +8,34 @@ export const editRecordInUserProfile = (text: string, datatype: string) => ({
     payload: { text, datatype }
 })
 
-export const selectUserProfile = (rootState: any) => rootState.userProfile;
+interface rootState {
+    userProfile: any,
+}
+export const selectUserProfile = (rootState: rootState) => rootState.userProfile;
 
 //reducer
-const InitState = {
+interface initState {
+    id: number,
+    name: string,
+    surname: string,
+    photoUrl: string,
+    username: string,
+    email: string,
+    street: string,
+    suite: string,
+    city: string,
+    zipcode: string,
+    phone: string,
+    website: string,
+}
+interface actionInterface {
+    type: string,
+    payload: {
+        datatype: string,
+        text: string,
+    }
+}
+const InitState: initState = {
     id: 1,
     name: 'Jan',
     surname: 'Kowalski',
@@ -26,7 +50,7 @@ const InitState = {
     website: 'My Shop.pl',
 }
 
-const userProfileReducer = (state: any = InitState, action: any) => {
+const userProfileReducer = (state: any = InitState, action: actionInterface) => {
     switch (action.type) {
         case EDIT_RECORD:
             const key = action.payload.datatype

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FC } from 'react';
+import { FC, SVGAttributes } from 'react';
 import './ProductMiniBox.scss';
 import { VscCircleSlash } from 'react-icons/vsc';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +15,7 @@ interface ProductProps {
     category: string
     price: number,
     availablePieces: number,
-    image: null | any,
+    image: null | SVGAttributes<SVGElement>,
     boxButtonType?: string,
 }
 
