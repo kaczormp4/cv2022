@@ -37,7 +37,7 @@ const SearchbarAndNavi: FC = () => {
         <div className="navContainer">
             <div className="navContent">
                 <div className="searchEngine">
-                    <Link to="shopcategories">
+                    <Link to="search">
                         <input type="" value={typedText} onChange={changeTextInInput}></input>
                         <div>
                             {typedText === '' ?

@@ -11,8 +11,8 @@ const CategoriesView: FC = () => {
             <div className="Categories">
                 <span>CATEGORIES</span>
                 <div className="arrowBox">
-                    <BiLeftArrow />
-                    <BiRightArrow />
+                    {/* <BiLeftArrow />
+                    <BiRightArrow /> */}
                 </div>
             </div>
             <div className="CategoriesVievBox">

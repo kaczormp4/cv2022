@@ -17,8 +17,8 @@ const HomeView: FC = () => {
             <div className="Categories">
                 <span>Deals of the day</span>
                 <div className="arrowBox">
-                    <BiLeftArrow />
-                    <BiRightArrow />
+                    {/* <BiLeftArrow />
+                    <BiRightArrow /> */}
                 </div>
             </div>
             <div className="Products">
@@ -39,8 +39,8 @@ const HomeView: FC = () => {
             <div className="Categories">
                 <span>Exclusive offers</span>
                 <div className="arrowBox">
-                    <BiLeftArrow />
-                    <BiRightArrow />
+                    {/* <BiLeftArrow />
+                    <BiRightArrow /> */}
                 </div>
             </div>
             <div className="Products">
@@ -61,8 +61,8 @@ const HomeView: FC = () => {
             <div className="Categories">
                 <span>Recently viewed by you</span>
                 <div className="arrowBox">
-                    <BiLeftArrow />
-                    <BiRightArrow />
+                    {/* <BiLeftArrow />
+                    <BiRightArrow /> */}
                 </div>
             </div>
             <div className="Products">

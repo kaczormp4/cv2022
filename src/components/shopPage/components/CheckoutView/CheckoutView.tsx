@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { selectUserCart } from '../../../../redux/userCartReducer';
+import { cleartCart, selectUserCart } from '../../../../redux/userCartReducer';
 import products from '../../data/products';
 import './CheckoutView.scss';
 
@@ -9,6 +9,11 @@ const CheckoutView = () => {
     const { inCart } = useSelector(selectUserCart);
     const addedToCart = products.filter(
         allProducts => inCart.some((product: { productID: number; }) => product.productID === allProducts.id));
+
+    const dispatch = useDispatch();
+    const addToCartHandleClick = () => {
+        dispatch(cleartCart());
+    };
 
     let totalPrice: number = 0;
     addedToCart.forEach((p: { id: number, price: number }) => {
@@ -27,7 +32,7 @@ const CheckoutView = () => {
                     {/* <BiLeftArrow />
                     <BiRightArrow /> */}
 
-                    <Link to='/checkout'><button>BUY AND PAY</button></Link>
+                    <Link to='/'><button onClick={addToCartHandleClick}>BUY AND PAY</button></Link>
 
                 </div>
             </div>

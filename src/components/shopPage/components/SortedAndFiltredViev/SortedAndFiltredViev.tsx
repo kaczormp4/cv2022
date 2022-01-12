@@ -9,8 +9,8 @@ import { selectSearchEngine } from '../../../../redux/searchEngineReducer';
 import { useSelector } from 'react-redux';
 
 const SortedAndFiltredViev: FC = () => {
-    // let params = useParams();
-    // return <h1>{params.categoryId}</h1>;
+    let params = useParams();
+
     const typedTextInSearchEngine = useSelector(selectSearchEngine);
     const filteredProducts = products.filter((product) => {
         if (typedTextInSearchEngine !== '') {
@@ -25,6 +25,7 @@ const SortedAndFiltredViev: FC = () => {
 
     return (
         <>
+            <h1>{params.categoryId}</h1>;
             <div className="Categories">
                 {
                     typedTextInSearchEngine === '' ?
