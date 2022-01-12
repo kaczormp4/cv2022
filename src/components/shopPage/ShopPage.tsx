@@ -15,24 +15,25 @@ import CheckoutView from './components/CheckoutView/CheckoutView';
 const ShopPage: FC = () => {
     return (
         <div className="ShopPageContainer">
-            <div className="SP_MainWiew">
-                <LeftMenuNavi />
-                <div className="rightContentContainer">
+            <div className={`SP_MainWiew Mobile`}>
+                <LeftMenuNavi mobile={false} />
+                <div className={`rightContentContainer RCCMobile`}>
                     <SearchbarAndNavi />
                     <div className="ContentMainBox">
                         <Routes>
                             <Route path="/" element={<MainInfoView />} />
                             <Route path="/home" element={<HomeView />} />
-                            {/* <Route path="/shopcategories" element={<CategoriesView />} >
+                            <Route path="/shopcategories" element={<CategoriesView />} >
                                 <Route path=":categoryId" element={<SortedAndFiltredViev />} />
-                            </Route> */}
-                            <Route path="/shopcategories" element={<SortedAndFiltredViev />} />
+                            </Route>
+                            <Route path="/search" element={<SortedAndFiltredViev />} />
                             <Route path="/shopcart" element={<CartView />} />
                             <Route path="/shopsettings" element={<SettingViews />} />
                             <Route path="/checkout" element={<CheckoutView />} />
                         </Routes>
                     </div>
                 </div>
+                <LeftMenuNavi mobile={true} />
             </div>
         </div>
     )

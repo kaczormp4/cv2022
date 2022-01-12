@@ -10,45 +10,67 @@ import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { selectUserCart } from '../../../../redux/userCartReducer';
 
-const LeftMenuNavi: FC = () => {
+interface LeftMenuNaviProps {
+    mobile: boolean;
+}
+const LeftMenuNavi: FC<LeftMenuNaviProps> = ({ mobile }) => {
     const [fullMenu, setFullMenu] = useState<boolean>(true);
     const { counter } = useSelector(selectUserCart);
 
     return (
-        <>
-            <div className="leftMenuContainer">
-                {fullMenu ?
-                    <div className="leftMenuOpen">
-                        <div className="shopLogo">
-                            <div className="text">
-                                <Link to="/">
-                                    <RiShoppingBasket2Line />MyFavShop
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="listConstainer">
-                            <ul className="ulContainer">
-                                <li><Link to="home"><AiFillHome /><span>HOME</span></Link></li>
-                                <li><Link to="shopcategories"><BiCategory /><span>CATEGORIES</span></Link></li>
-                                <li>
-                                    <Link to="shopcart">
-                                        <RiShoppingBasket2Line />
-                                        <span>CART</span>
-                                        <span className="Counter">{counter > 0 && counter}</span>
+        !mobile ?
+            <>
+                <div className="leftMenuContainer">
+                    {fullMenu ?
+                        <div className="leftMenuOpen">
+                            <div className="shopLogo">
+                                <div className="text">
+                                    <Link to="/">
+                                        <RiShoppingBasket2Line /><span>MyFavShop</span>
                                     </Link>
-                                </li>
-                                <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
-                                <li><Link to="/"><BiLogOut /><span>LOG OUT</span></Link></li>
-                            </ul>
+                                </div>
+                            </div>
+                            <div className="listConstainer">
+                                <ul className="ulContainer">
+                                    <li><Link to="home"><AiFillHome /><span>HOME</span></Link></li>
+                                    <li><Link to="shopcategories"><BiCategory /><span>CATEGORIES</span></Link></li>
+                                    <li>
+                                        <Link to="shopcart">
+                                            <RiShoppingBasket2Line />
+                                            <span>CART</span>
+                                            <span className="Counter">{counter > 0 && counter}</span>
+                                        </Link>
+                                    </li>
+                                    <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
+                                    <li><Link to="/"><BiLogOut /><span>LOG OUT</span></Link></li>
+                                </ul>
+                            </div>
+                            {/* <div className="closeAndOpenConstainer"><IoIosArrowBack /></div> */}
                         </div>
-                        {/* <div className="closeAndOpenConstainer"><IoIosArrowBack /></div> */}
+                        :
+                        <div className="leftMenuClose">
+                        </div>
+                    }
+                </div>
+            </>
+            :
+            <>
+                <div className="leftMenuContainerMobile">
+                    <div className="leftMenuOpenMobile">
+                        <ul className="ulContainerMobile">
+                            <li><Link to="home"><AiFillHome /></Link></li>
+                            <li><Link to="shopcategories"><BiCategory /></Link></li>
+                            <li>
+                                <Link to="shopcart">
+                                    <RiShoppingBasket2Line />
+                                    <span className="CounterMobile">{counter > 0 && counter}</span>
+                                </Link>
+                            </li>
+                            <li><Link to="shopsettings"><FiSettings /></Link></li>
+                        </ul>
                     </div>
-                    :
-                    <div className="leftMenuClose">
-                    </div>
-                }
-            </div>
-        </>
+                </div>
+            </>
     )
 }
 
