@@ -21,8 +21,8 @@ const WelcomePage: React.FC = () => {
                         <span className="SpanTitle">Bartłomiej Kaczmarczyk</span>
                         <span className="SpanDesc">- Front-End Developer -</span>
                         <div className="InfoButtonBox">
-                            <Link to='https://github.com/kaczormp4'><FaGithub /></Link>
-                            <Link to='https://www.linkedin.com/in/bart%C5%82omiej-kaczmarczyk-77aa77215/'><FaLinkedin /></Link>
+                            <a href='https://github.com/kaczormp4'><FaGithub /></a>
+                            <a href='https://www.linkedin.com/in/bart%C5%82omiej-kaczmarczyk-77aa77215/'><FaLinkedin /></a>
                         </div>
                     </div>
                     <div className="InfoPreviewBox">
