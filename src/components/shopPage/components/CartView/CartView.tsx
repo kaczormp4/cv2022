@@ -31,7 +31,9 @@ const CartView: FC = () => {
                 <div className="arrowBox">
                     {/* <BiLeftArrow />
                     <BiRightArrow /> */}
-                    TOTAL PRICE: {totalPrice}$
+                    <span>
+                        TOTAL PRICE: {totalPrice}$
+                    </span>
                     {
                         totalPrice > 0 && <Link to='/checkout'><button>go to checkout</button></Link>
                     }

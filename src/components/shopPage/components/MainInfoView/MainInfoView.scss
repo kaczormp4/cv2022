@@ -1,0 +1,27 @@
+@import "../../../../variables/shopPage.scss";
+
+.Section {
+  width: 100%;
+  color: $sectionFontColor;
+  font-size: $sectionFontSize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Content {
+  margin-top: $marginMedium;
+  width: 100%;
+  color: $mainFontColor;
+  font-size: $mediumFontSize;
+}
+.SectionContent {
+  margin-bottom: $marginMediumPlus;
+}
+.SM {
+  margin-left: $marginMedium;
+}
+
+.bold {
+  font-weight: bold;
+  color: $blackFontColor;
+}

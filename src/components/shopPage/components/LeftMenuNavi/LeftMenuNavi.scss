@@ -197,6 +197,16 @@
       span {
         display: none;
       }
+      span[class^="Counter"] {
+        display: block;
+        margin-left: 0;
+        color: $priceFontColor;
+        background-color: transparent;
+        font-size: $smallFontSize;
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 0;
+      }
     }
   }
 
@@ -204,6 +214,7 @@
     width: max-content;
     .text span {
       display: none;
+      margin-left: 0;
     }
   }
 }

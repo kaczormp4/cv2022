@@ -7,8 +7,8 @@ import { RiShoppingBasket2Line } from 'react-icons/ri';
 import { FiSettings } from 'react-icons/fi';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
-import { selectUserCart } from '../../../../redux/userCartReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { cleartCart, selectUserCart } from '../../../../redux/userCartReducer';
 
 interface LeftMenuNaviProps {
     mobile: boolean;
@@ -16,6 +16,11 @@ interface LeftMenuNaviProps {
 const LeftMenuNavi: FC<LeftMenuNaviProps> = ({ mobile }) => {
     const [fullMenu, setFullMenu] = useState<boolean>(true);
     const { counter } = useSelector(selectUserCart);
+
+    const dispatch = useDispatch();
+    const clearCartHandleClick = () => {
+        dispatch(cleartCart());
+    };
 
     return (
         !mobile ?
@@ -42,7 +47,7 @@ const LeftMenuNavi: FC<LeftMenuNaviProps> = ({ mobile }) => {
                                         </Link>
                                     </li>
                                     <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
-                                    <li><Link to="/"><BiLogOut /><span>LOG OUT</span></Link></li>
+                                    <li onClick={clearCartHandleClick}><Link to="/"><BiLogOut /><span>LOG OUT</span></Link></li>
                                 </ul>
                             </div>
                             {/* <div className="closeAndOpenConstainer"><IoIosArrowBack /></div> */}

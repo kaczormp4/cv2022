@@ -25,7 +25,7 @@ const SortedAndFiltredViev: FC = () => {
 
     return (
         <>
-            <h1>{params.categoryId}</h1>;
+            <h1>{params.categoryId}</h1>
             <div className="Categories">
                 {
                     typedTextInSearchEngine === '' ?

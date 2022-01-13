@@ -45,9 +45,6 @@ const initialState: initState = {
     counter: 0
 }
 const userCartReducer = (state: stateInterface = initialState, action: actionInterface) => {
-    console.log(state);
-    console.log('action', action);
-
     switch (action.type) {
         case ADD_TO_CART:
             let newState: object = {};

@@ -18,11 +18,15 @@
     font-size: $sectionFontSize;
     display: flex;
     align-items: center;
+    > span {
+      max-height: calc($sectionFontSize + 2 * $paddingVSmall);
+    }
     & > svg:hover {
       color: $blackFontColor;
       cursor: pointer;
     }
     & a > button {
+      order: 2;
       font-size: $sectionFontSize;
       background-color: white;
       color: $sectionFontColor;
@@ -43,5 +47,15 @@
   margin-top: $marginMediumPlus;
   & > a {
     color: $sectionFontColor;
+  }
+}
+@media only screen and (max-width: 860px) {
+  .arrowBox {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    > span {
+      order: 2;
+      min-width: 50%;
+    }
   }
 }

@@ -11,7 +11,7 @@ const CheckoutView = () => {
         allProducts => inCart.some((product: { productID: number; }) => product.productID === allProducts.id));
 
     const dispatch = useDispatch();
-    const addToCartHandleClick = () => {
+    const clearCartHandleClick = () => {
         dispatch(cleartCart());
     };
 
@@ -32,7 +32,7 @@ const CheckoutView = () => {
                     {/* <BiLeftArrow />
                     <BiRightArrow /> */}
 
-                    <Link to='/'><button onClick={addToCartHandleClick}>BUY AND PAY</button></Link>
+                    <Link to='/'><button onClick={clearCartHandleClick}>BUY AND PAY</button></Link>
 
                 </div>
             </div>

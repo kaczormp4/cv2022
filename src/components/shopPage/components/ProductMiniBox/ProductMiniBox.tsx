@@ -7,6 +7,7 @@ import { addToCart, removeFromCart, selectUserCart } from '../../../../redux/use
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
 import { ImCancelCircle } from 'react-icons/im';
 import { openModalByProductId } from '../../../../redux/modalReducer';
+import { addItemToHistory } from '../../../../redux/viewHistoryReducer';
 
 interface ProductProps {
     id: number,
@@ -32,6 +33,7 @@ const ProductMiniBox: FC<ProductProps> = (props: ProductProps) => {
     };
     const openFullViewInModal = () => {
         dispatch(openModalByProductId(true, props.id));
+        dispatch(addItemToHistory(props.id));
     }
 
     let footerSection = null;
