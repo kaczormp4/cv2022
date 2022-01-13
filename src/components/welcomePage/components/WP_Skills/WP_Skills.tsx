@@ -4,7 +4,7 @@ import './WP_Skills.scss';
 const WP_Skills = () => {
     return (
         <>
-            skills
+            <h1 className="sectionH1">SKILLS</h1>
         </>
     )
 }

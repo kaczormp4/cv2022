@@ -4,7 +4,7 @@ import './WP_Contact.scss';
 const WP_Contact = () => {
     return (
         <>
-            CONTACT
+            <h1 className="sectionH1">SKILLS</h1>
         </>
     )
 }

@@ -47,10 +47,16 @@
       }
       .InfoButtonBox {
         width: 100%;
-        text-align: center;
-        color: lightgrey;
-        font-size: 4rem;
-        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        & > a {
+          text-align: center;
+          color: lightgrey;
+          font-size: 4rem;
+          margin-top: 2rem;
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
         & > svg,
         img {
           cursor: pointer;
