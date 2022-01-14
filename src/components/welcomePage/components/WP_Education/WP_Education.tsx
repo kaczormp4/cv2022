@@ -6,15 +6,30 @@ const WP_Education = () => {
         <>
             <h1 className="sectionH1">EDUCATION</h1>
             <div className="WPAcontent">
-                <p> 2020 - NOW</p>
+                <div className="WPA_EduBox">
+                    <div className="WPA_LeftLine">
+                        <div className="WPA_Circle">NOW</div>
+                        <div className="WPA_Line"></div>
+                        <div className="WPA_Circle">2020</div>
+                    </div>
+                    <div className="WPA_RightContent">
+                        <span> University of Economics and Computer Science in Krakow  </span>
+                        <p>IT and Econometrics profile</p>
+                    </div>
+                </div>
+                <div className="WPA_EduBox">
+                    <div className="WPA_LeftLine">
+                        <div className="WPA_Circle">2019</div>
+                        <div className="WPA_Line"></div>
+                        <div className="WPA_Circle">2015</div>
+                    </div>
+                    <div className="WPA_RightContent">
+                        <span> School Complex No. 1 in Bochnia</span>
+                        <p> IT technician profile</p>
+                    </div>
+                </div>
 
-                <p> University of Economics and Computer Science in Krakow  </p>
 
-                <p>IT and Econometrics profile</p>
-
-                <p>2015 - 2019</p>
-                <p> School Complex No. 1 in Bochnia</p>
-                <p> IT technician profile</p>
             </div>
         </>
     )

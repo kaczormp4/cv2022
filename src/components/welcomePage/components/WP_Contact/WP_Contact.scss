@@ -1,3 +1,46 @@
 .sectionH1 {
   color: #6bd968;
 }
+.WPC_Content {
+  margin-top: 20px;
+  .WPP_oneLine {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: lightgrey;
+    position: relative;
+    & > span {
+      margin-left: 20px;
+    }
+    & > img,
+    svg {
+      cursor: pointer;
+    }
+    .WPP_oneLineCoppiedToClipboard {
+      position: absolute;
+      top: -20px;
+      font-size: 1rem;
+      background-color: #6bd968;
+      color: black;
+      padding-left: 20px;
+      padding-right: 20px;
+      transform: rotate3d(1, 0, 0, 0deg);
+      transition-duration: 2s;
+      border-radius: 10px;
+      animation-name: WPPOCTopacity;
+      animation-duration: 3s;
+    }
+    @keyframes WPPOCTopacity {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}

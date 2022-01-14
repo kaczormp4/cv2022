@@ -26,10 +26,10 @@ const WelcomePage: React.FC = () => {
                         </div>
                     </div>
                     <div className="InfoPreviewBox">
-                        <button onClick={() => setCurrentView('about')}>ABOUT</button>
-                        <button onClick={() => setCurrentView('skills')}>SKILLS</button>
-                        <button onClick={() => setCurrentView('education')}>EDUCATION</button>
-                        <button onClick={() => setCurrentView('contact')}>CONTACT</button>
+                        <button onClick={() => setCurrentView(currentView === 'about' ? '' : 'about')}>ABOUT</button>
+                        <button onClick={() => setCurrentView(currentView === 'skills' ? '' : 'skills')}>SKILLS</button>
+                        <button onClick={() => setCurrentView(currentView === 'education' ? '' : 'education')}>EDUCATION</button>
+                        <button onClick={() => setCurrentView(currentView === 'contact' ? '' : 'contact')}>CONTACT</button>
                     </div>
                 </div>
             </div>

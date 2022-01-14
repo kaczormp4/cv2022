@@ -6,3 +6,52 @@
     margin-bottom: 20px;
   }
 }
+.WPA_EduBox {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  height: 200px;
+  .WPA_LeftLine {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    .WPA_Circle {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #6bd968;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition-duration: 0.3s;
+      &:hover {
+        font-size: 1.4rem;
+        background-color: black;
+        text-shadow: 2px 2px black, -2px -2px black, 2px -2px black,
+          -2px 2px black;
+        cursor: none;
+      }
+    }
+    .WPA_Line {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 5px;
+      height: 100px;
+      background-color: #6bd968;
+      border-radius: 10px;
+    }
+  }
+  .WPA_RightContent {
+    padding-top: 50px;
+    & > span {
+      font-size: 1.6rem;
+    }
+    & > p {
+      padding-top: 20px;
+    }
+  }
+}
