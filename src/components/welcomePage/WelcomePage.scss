@@ -1,8 +1,8 @@
 @import "../../variables/welcomPage.scss";
 
 .WelcomePageContainer {
-  background-color: black;
-  color: gold;
+  background-color: $mainBackgroundColor;
+  color: $nameFontColor;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -21,12 +21,12 @@
     flex-direction: column;
     align-items: center;
     .InfoPhotoBox {
-      width: 300px;
-      height: 300px;
+      width: $photoBoxWidth;
+      height: $photoBoxHeight;
       background-size: cover;
       background-image: url("https://avatars.githubusercontent.com/u/33695264?v=4");
-      margin-bottom: 30px;
-      border-radius: 20px 20px 20px 20px;
+      margin-bottom: $largeMargin;
+      border-radius: $mediumRadius;
     }
     .InfoContentBox {
       width: 100%;
@@ -36,14 +36,14 @@
       & > span {
         text-align: center;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: $smallMargin;
       }
       .SpanTitle {
-        font-size: 3rem;
+        font-size: $largeFontSize;
       }
       .SpanDesc {
-        font-size: 1.6rem;
-        color: #6bd968;
+        font-size: $smallFontSize;
+        color: $sectionFontColor;
       }
       .InfoButtonBox {
         width: 100%;
@@ -52,10 +52,10 @@
         & > a {
           text-align: center;
           color: lightgrey;
-          font-size: 4rem;
-          margin-top: 2rem;
-          margin-left: 1rem;
-          margin-right: 1rem;
+          font-size: $plusLargeFontSize;
+          margin-top: $largeMarginREM;
+          margin-left: $smallMarginREM;
+          margin-right: $smallMarginREM;
         }
         & > svg,
         img {
@@ -73,20 +73,24 @@
       & > button {
         border: 0;
         width: 40%;
-        font-size: 2rem;
-        padding: 15px;
-        border-radius: 20px 20px 20px 20px;
+        font-size: $buttonFontSize;
+        padding: $mediumPadding;
+        border-radius: $mediumRadius;
         &:hover {
           box-shadow: inset 0 0px 0px 2px lightgrey;
-          color: lightgrey;
+          color: $buttonHoverFontColor;
           cursor: pointer;
-          background-color: black;
+          background-color: $mainBackgroundColor;
         }
       }
     }
   }
 }
 .RightContentContainer {
+  background-color: $scndBackgroundColor;
+  border-radius: $mediumRadius 0 0 $mediumRadius;
+  padding: $largePadding;
+  transition-duration: $slowAnimationDuration2;
   &.Close {
     width: 0%;
     height: 80%;
@@ -99,10 +103,10 @@
     width: 50%;
     height: 80%;
     animation-name: Open;
-    animation-duration: 0.8s;
+    animation-duration: $fastAnimationDuration08;
     & > * {
       animation-name: OpenContent;
-      animation-duration: 0.7s;
+      animation-duration: $fastAnimationDuration07;
     }
   }
   @keyframes Open {
@@ -129,17 +133,87 @@
     }
   }
 
-  background-color: #121212;
-  border-radius: 20px 0 0 20px;
-  padding: 30px;
-  transition-duration: 2s;
   .RightContent {
     width: 100%;
     height: 100%;
-    background-color: #121212;
-    color: lightgrey;
+    background-color: $scndBackgroundColor;
+    color: $buttonHoverFontColor;
   }
 }
-.title {
-  font-size: 12rem;
+
+@media only screen and (max-width: 1600px) {
+  .LeftContent {
+    .InfoContainer {
+      .InfoContentBox {
+        .SpanTitle {
+          font-size: $mediumFontSize;
+        }
+        .SpanDesc {
+          font-size: $small2FontSize;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .WelcomePageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: max-content;
+    min-height: 100vh;
+  }
+  .LeftContent {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    margin-top: $largeMarginREM;
+    margin-bottom: $largeMarginREM;
+    .InfoContainer {
+      .InfoContentBox {
+        .SpanTitle {
+          font-size: $mediumFontSize;
+        }
+        .SpanDesc {
+          font-size: $small2FontSize;
+        }
+      }
+      .InfoPreviewBox {
+        width: 70%;
+        margin-top: $smallMarginREM;
+      }
+    }
+  }
+  .RightContentContainer {
+    border-radius: $mediumRadius;
+    &.Open {
+      width: 80%;
+      min-height: 70vh;
+      height: max-content;
+      margin-top: $largeMarginREM;
+      margin-bottom: $largeMarginREM;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .LeftContent {
+    .InfoContainer {
+      .InfoPreviewBox {
+        width: 100%;
+        & > button {
+          width: 50%;
+        }
+      }
+    }
+  }
+  .RightContentContainer {
+    border-radius: $mediumRadius;
+    &.Open {
+      width: 80%;
+      height: max-content;
+      margin-top: $largeMarginREM;
+      margin-bottom: $largeMarginREM;
+    }
+  }
 }

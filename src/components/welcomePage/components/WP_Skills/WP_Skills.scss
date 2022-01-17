@@ -1,9 +1,11 @@
+@import "../../../../variables/welcomPage.scss";
+
 .sectionH1 {
-  color: #6bd968;
+  color: $sectionFontColor;
 }
 .WP_SkillsConent {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: $mediumMargin;
+  margin-bottom: $mediumMargin;
   display: flex;
   .WP_SkillsBar {
     display: flex;
@@ -14,16 +16,16 @@
     .EmptyBar_char {
       width: 50px;
       height: 200px;
-      border: 1px solid #6bd968;
+      border: 1px solid $sectionFontColor;
       display: flex;
       align-items: flex-end;
       justify-content: center;
       position: relative;
       .filledBar_char {
         width: 100%;
-        background-color: #6bd968;
+        background-color: $greenBackgroundColor;
         animation-name: barAnimation;
-        animation-duration: 1s;
+        animation-duration: $mediumAnimationDuration1;
         z-index: 10;
       }
       @keyframes barAnimation {
@@ -68,12 +70,12 @@
       }
     }
     & > span {
-      margin-top: 10px;
-      font-size: 1.2rem;
+      margin-top: $smallMargin;
+      font-size: $small2FontSize;
       text-align: center;
     }
   }
 }
 .WP_AditionalSkillsConent {
-  margin-top: 20px;
+  margin-top: $mediumMargin;
 }

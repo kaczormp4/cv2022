@@ -1,9 +1,11 @@
+@import "../../../../variables/welcomPage.scss";
+
 .sectionH1 {
-  color: #6bd968;
+  color: $greenBackgroundColor;
 }
 .WPAcontent {
-  margin-top: 20px;
+  margin-top: $mediumMargin;
   p {
-    margin-bottom: 20px;
+    margin-bottom: $mediumMargin;
   }
 }

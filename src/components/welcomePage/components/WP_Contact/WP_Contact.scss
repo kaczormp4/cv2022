@@ -1,17 +1,19 @@
+@import "../../../../variables/welcomPage.scss";
+
 .sectionH1 {
-  color: #6bd968;
+  color: $sectionFontColor;
 }
 .WPC_Content {
-  margin-top: 20px;
+  margin-top: $mediumMargin;
   .WPP_oneLine {
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: $buttonFontSize;
+    margin-bottom: $mediumMargin;
     color: lightgrey;
     position: relative;
     & > span {
-      margin-left: 20px;
+      margin-left: $mediumMargin;
     }
     & > img,
     svg {
@@ -21,15 +23,15 @@
       position: absolute;
       top: -20px;
       font-size: 1rem;
-      background-color: #6bd968;
+      background-color: $greenBackgroundColor;
       color: black;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: $mediumMargin;
+      padding-right: $mediumMargin;
       transform: rotate3d(1, 0, 0, 0deg);
-      transition-duration: 2s;
-      border-radius: 10px;
+      transition-duration: $slowAnimationDuration2;
+      border-radius: $smallRadius;
       animation-name: WPPOCTopacity;
-      animation-duration: 3s;
+      animation-duration: $vSlowAnimationDuration3;
     }
     @keyframes WPPOCTopacity {
       0% {
