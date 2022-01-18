@@ -57,3 +57,16 @@
     }
   }
 }
+@media only screen and (max-width: 610px) {
+  .WPA_EduBox {
+    .WPA_RightContent {
+      & > span {
+        font-size: $small2FontSize;
+      }
+      & > p {
+        padding-top: $medium2Padding;
+        color: rgba(211, 211, 211, 0.74);
+      }
+    }
+  }
+}

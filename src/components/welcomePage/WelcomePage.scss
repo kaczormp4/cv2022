@@ -214,3 +214,34 @@
     }
   }
 }
+@media only screen and (max-width: 720px) {
+  .LeftContent {
+    .InfoContainer {
+      .InfoPreviewBox {
+        width: 100%;
+      }
+    }
+  }
+  .RightContentContainer {
+    &.Open {
+      width: 95%;
+    }
+  }
+}
+@media only screen and (max-width: 610px) {
+  .LeftContent {
+    .InfoContainer {
+      .InfoPreviewBox {
+        width: 100%;
+        & > button {
+          font-size: $smallFontSize;
+        }
+      }
+    }
+  }
+  .RightContentContainer {
+    &.Open {
+      width: 95%;
+    }
+  }
+}

@@ -41,7 +41,7 @@ const WP_Skills = () => {
         },
         {
             id: 7,
-            name: "GitHub",
+            name: "Git",
             perct: 60,
             duration: '4s'
         },

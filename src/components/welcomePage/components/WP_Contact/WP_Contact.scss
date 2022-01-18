@@ -46,3 +46,14 @@
     }
   }
 }
+@media only screen and (max-width: 610px) {
+  .WPC_Content {
+    margin-top: $mediumMargin;
+    .WPP_oneLine {
+      font-size: $smallFontSize;
+      .WPP_oneLineCoppiedToClipboard {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
