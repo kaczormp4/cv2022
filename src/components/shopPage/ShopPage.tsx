@@ -11,6 +11,7 @@ import { Routes, Route, useParams } from "react-router-dom";
 import SettingViews from './components/SettingsView/SettingViews';
 import { FC } from 'react';
 import CheckoutView from './components/CheckoutView/CheckoutView';
+import OneCategoryView from './components/OneCategoryView/OneCategoryView';
 
 const ShopPage: FC = () => {
     return (
@@ -24,7 +25,7 @@ const ShopPage: FC = () => {
                             <Route path="/" element={<MainInfoView />} />
                             <Route path="/home" element={<HomeView />} />
                             <Route path="/shopcategories" element={<CategoriesView />} >
-                                <Route path=":categoryId" element={<SortedAndFiltredViev />} />
+                                <Route path=":categoryId" element={<OneCategoryView />} />
                             </Route>
                             <Route path="/search" element={<SortedAndFiltredViev />} />
                             <Route path="/shopcart" element={<CartView />} />

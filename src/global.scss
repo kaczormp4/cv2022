@@ -1,5 +1,9 @@
 @import "./variables/shopPage.scss";
 
+@-ms-viewport {
+  width: device-width;
+}
+
 :root {
   font-size: 16px;
   margin: 0;

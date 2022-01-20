@@ -1,0 +1,29 @@
+@import "../../../../variables/shopPage.scss";
+
+.CategoriesVievBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $marginMedium;
+  margin-bottom: $marginMedium;
+}
+.Categories {
+  width: 100%;
+  color: $sectionFontColor;
+  font-size: $sectionFontSize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    color: $sectionFontColor;
+  }
+  .arrowBox {
+    font-size: $sectionFontSize;
+    display: flex;
+    align-items: center;
+    & > svg:hover {
+      color: $blackFontColor;
+      cursor: pointer;
+    }
+  }
+}
