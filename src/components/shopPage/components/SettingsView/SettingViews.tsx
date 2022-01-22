@@ -36,6 +36,7 @@ const SettingViews: FC = () => {
                             value={user.username}
                             onChange={changeTextInInput}
                             name="username"
+                            maxLength={12}
                         />
                     </div>
                 </div>
@@ -47,6 +48,7 @@ const SettingViews: FC = () => {
                             value={user.name}
                             onChange={changeTextInInput}
                             name="name"
+                            maxLength={12}
                         />
                     </div>
                 </div>
@@ -58,6 +60,7 @@ const SettingViews: FC = () => {
                             value={user.surname}
                             onChange={changeTextInInput}
                             name="surname"
+                            maxLength={12}
                         />
                     </div>
                 </div>
@@ -69,6 +72,7 @@ const SettingViews: FC = () => {
                             value={user.email}
                             onChange={changeTextInInput}
                             name="email"
+                            maxLength={20}
                         />
                     </div>
                 </div>
@@ -79,7 +83,8 @@ const SettingViews: FC = () => {
                             type="text"
                             value={user.phone}
                             onChange={changeTextInInput}
-                            name="email"
+                            name="phone"
+                            maxLength={15}
                         />
                     </div>
                 </div>
@@ -91,6 +96,7 @@ const SettingViews: FC = () => {
                             value={user.website}
                             onChange={changeTextInInput}
                             name="website"
+                            maxLength={20}
                         />
                     </div>
                 </div>
@@ -102,6 +108,7 @@ const SettingViews: FC = () => {
                             value={user.street}
                             onChange={changeTextInInput}
                             name="street"
+                            maxLength={20}
                         />
                     </div>
                 </div>
@@ -113,6 +120,7 @@ const SettingViews: FC = () => {
                             value={user.suite}
                             onChange={changeTextInInput}
                             name="suite"
+                            maxLength={20}
                         />
                     </div>
                 </div>
@@ -124,6 +132,7 @@ const SettingViews: FC = () => {
                             value={user.city}
                             onChange={changeTextInInput}
                             name="city"
+                            maxLength={20}
                         />
                     </div>
                 </div>
@@ -135,6 +144,7 @@ const SettingViews: FC = () => {
                             value={user.zipcode}
                             onChange={changeTextInInput}
                             name="zipcode"
+                            maxLength={9}
                         />
                     </div>
                 </div>

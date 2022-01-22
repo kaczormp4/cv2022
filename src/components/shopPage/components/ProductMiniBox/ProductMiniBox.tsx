@@ -13,7 +13,7 @@ interface ProductProps {
     id: number,
     name: string,
     description: string,
-    category: string
+    category?: string
     price: number,
     availablePieces: number,
     image: null | SVGAttributes<SVGElement>,
