@@ -74,6 +74,10 @@
       font-weight: bold;
       color: $blackFontColor;
       font-size: $largeFontSize;
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
   .userScndInfoContainer {
@@ -91,9 +95,78 @@
       font-weight: bold;
       color: $mainFontColor;
       font-size: $descFontSize;
+      width: 250px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     > div {
       width: 50%;
+    }
+  }
+}
+@media only screen and (max-width: 1650px) {
+  .staticUserInfo {
+    width: 100%;
+    .userPhoto {
+      width: 250px;
+      height: 250px;
+    }
+    .userScndInfoContainer {
+      > div {
+        width: 30%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .staticUserInfo {
+    .userScndInfoContainer {
+      > div {
+        width: 40%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 920px) {
+  .staticUserInfo {
+    .userScndInfoContainer {
+      .sectionTitle {
+        font-size: $descFontSize;
+        width: 100%;
+      }
+      .bold {
+        font-weight: bold;
+        color: $mainFontColor;
+        font-size: $mediumSFontSize;
+        width: 200px;
+      }
+      > div {
+        width: 50%;
+      }
+    }
+  }
+  .userInfo {
+    font-size: $descFontSize;
+    margin-bottom: $marginMedium;
+    .userInfoOneLine {
+      .editInfo {
+        input {
+          font-size: $descFontSize;
+          width: 250px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 550px) {
+  .userInfo {
+    .userInfoOneLine {
+      .editInfo {
+        input {
+          width: 200px;
+        }
+      }
     }
   }
 }

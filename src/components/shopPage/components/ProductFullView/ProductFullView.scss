@@ -78,6 +78,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      user-select: none;
       > svg,
       img {
         &:hover {
@@ -109,5 +110,27 @@
   &:hover {
     color: $disableFontColor !important;
     cursor: not-allowed !important;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .AddToCart {
+    .buttonsBox {
+      font-size: 3rem;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .AddToCart {
+    .buttonsBox {
+      font-size: 2.3rem;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .AddToCart {
+    .buttonsBox {
+      font-size: 1.8rem;
+    }
   }
 }

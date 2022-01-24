@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
 import { VscCircleSlash } from 'react-icons/vsc';
 import { useDispatch, useSelector } from 'react-redux';
@@ -70,7 +70,7 @@ const ProductFullView: FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

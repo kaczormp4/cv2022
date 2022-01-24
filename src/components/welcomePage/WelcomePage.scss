@@ -245,3 +245,14 @@
     }
   }
 }
+@media only screen and (max-width: 450px) {
+  .LeftContent {
+    .InfoContainer {
+      .InfoPreviewBox {
+        & > button {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

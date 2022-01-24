@@ -38,7 +38,7 @@ const SearchbarAndNavi: FC = () => {
             <div className="navContent">
                 <div className="searchEngine">
                     <Link to="search">
-                        <input type="" value={typedText} onChange={changeTextInInput}></input>
+                        <input type="" value={typedText} onChange={changeTextInInput} maxLength={20}></input>
                         <div>
                             {typedText === '' ?
                                 <FcSearch />
