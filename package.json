@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development"
   },
@@ -16,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/kaczormp4/cv2022/issues"
   },
-  "homepage": "https://github.com/kaczormp4/cv2022#readme",
+  "homepage": "https://kaczormp4.github.io/cv2022",
   "devDependencies": {
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
@@ -33,6 +35,7 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
