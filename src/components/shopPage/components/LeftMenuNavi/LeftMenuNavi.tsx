@@ -30,7 +30,7 @@ const LeftMenuNavi: FC<LeftMenuNaviProps> = ({ mobile }) => {
                         <div className="leftMenuOpen">
                             <div className="shopLogo">
                                 <div className="text">
-                                    <Link to="cv2022">cv2022
+                                    <Link to="cv2022">
                                         <RiShoppingBasket2Line /><span>MyFavShop</span>
                                     </Link>
                                 </div>
