@@ -30,7 +30,7 @@ const LeftMenuNavi: FC<LeftMenuNaviProps> = ({ mobile }) => {
                         <div className="leftMenuOpen">
                             <div className="shopLogo">
                                 <div className="text">
-                                    <Link to="/">
+                                    <Link to="cv2022">cv2022
                                         <RiShoppingBasket2Line /><span>MyFavShop</span>
                                     </Link>
                                 </div>
@@ -47,7 +47,7 @@ const LeftMenuNavi: FC<LeftMenuNaviProps> = ({ mobile }) => {
                                         </Link>
                                     </li>
                                     <li><Link to="shopsettings"><FiSettings /><span>SETTINGS</span></Link></li>
-                                    <li onClick={clearCartHandleClick}><Link to="/"><BiLogOut /><span>LOG OUT</span></Link></li>
+                                    <li onClick={clearCartHandleClick}><Link to="cv2022"><BiLogOut /><span>LOG OUT</span></Link></li>
                                 </ul>
                             </div>
                             {/* <div className="closeAndOpenConstainer"><IoIosArrowBack /></div> */}

@@ -22,7 +22,7 @@ const ShopPage: FC = () => {
                     <SearchbarAndNavi />
                     <div className="ContentMainBox">
                         <Routes>
-                            <Route path="/" element={<MainInfoView />} />
+                            <Route path="/cv2022" element={<MainInfoView />} />
                             <Route path="/home" element={<HomeView />} />
                             <Route path="/shopcategories" element={<CategoriesView />} >
                                 <Route path=":categoryId" element={<OneCategoryView />} />
