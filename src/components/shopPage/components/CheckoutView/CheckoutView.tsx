@@ -32,7 +32,7 @@ const CheckoutView = () => {
                     {/* <BiLeftArrow />
                     <BiRightArrow /> */}
 
-                    <Link to='/'><button onClick={clearCartHandleClick}>BUY AND PAY</button></Link>
+                    <Link to='/cv2022'><button onClick={clearCartHandleClick}>BUY AND PAY</button></Link>
 
                 </div>
             </div>
