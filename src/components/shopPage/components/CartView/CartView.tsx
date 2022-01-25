@@ -35,7 +35,7 @@ const CartView: FC = () => {
                         TOTAL PRICE: {totalPrice}$
                     </span>
                     {
-                        totalPrice > 0 && <Link to='/checkout'><button>go to checkout</button></Link>
+                        totalPrice > 0 && <Link to='/checkout'><button className="buttonGTC">go to checkout</button></Link>
                     }
                 </div>
             </div>

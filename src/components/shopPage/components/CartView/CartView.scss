@@ -50,12 +50,28 @@
   }
 }
 @media only screen and (max-width: 860px) {
-  .arrowBox {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    > span {
-      order: 2;
-      min-width: 50%;
+  .Cart {
+    align-items: flex-start !important;
+    .arrowBox {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      > span {
+        order: 2;
+        min-width: 50%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .Cart {
+    .arrowBox {
+      > span {
+        max-height: calc($sectionFontSize + 2 * $paddingVSmall);
+        font-size: $smallFontSize;
+      }
+      .buttonGTC {
+        font-size: $smallFontSize;
+      }
     }
   }
 }
