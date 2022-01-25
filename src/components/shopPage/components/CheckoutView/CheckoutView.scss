@@ -58,3 +58,12 @@
     }
   }
 }
+@media only screen and (max-width: 500px) {
+  .Cart {
+    .arrowBox {
+      & a > button {
+        font-size: $smallFontSize;
+      }
+    }
+  }
+}
