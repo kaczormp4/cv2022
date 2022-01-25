@@ -46,10 +46,17 @@ $inputBoxShadowFOCUS: 0px 0px 5px $PRIVATE_BLACK;
 $miniBoxWidth: 200px;
 $categoryImgWidth: 200px;
 
+$miniBoxWidthMobile: 150px;
+$miniBoxWidthMobile2: 120px;
+
 // HEIGHT
 $miniBoxHeight: 200px;
 $categoryImgHeight: 160px;
 $prdctImgHeight: 110px;
+
+$miniBoxHeightMobile: 150px;
+$prdctImgHeightMobile: 70px;
+$prdctImgHeightMobile2: 40px;
 
 // RADIUS
 $borderRadius: 50px;
@@ -62,6 +69,8 @@ $svgImgSize: 140px;
 $svgImgSizeMedium: 120px;
 $svgImgSizeRemXXL: 1.8rem;
 $svgImgSizeRem: 1.4rem;
+$svgImgSizeSmall: 70px;
+$svgImgSizeSmall2: 50px;
 
 // ANIMATION DURATION:
 $longAnimationDuration: 1.5s;

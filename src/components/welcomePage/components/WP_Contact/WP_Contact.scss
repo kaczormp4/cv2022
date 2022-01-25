@@ -57,3 +57,23 @@
     }
   }
 }
+@media only screen and (max-width: 510px) {
+  .WPC_Content {
+    .WPP_oneLine {
+      font-size: $small2FontSize;
+      .WPP_oneLineCoppiedToClipboard {
+        font-size: $vSmallFontSize;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 410px) {
+  .WPC_Content {
+    .WPP_oneLine {
+      font-size: 1rem;
+      .WPP_oneLineCoppiedToClipboard {
+        font-size: $vSmallFontSize;
+      }
+    }
+  }
+}

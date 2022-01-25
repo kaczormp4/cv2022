@@ -92,3 +92,48 @@
     cursor: not-allowed;
   }
 }
+@media only screen and (max-width: 540px) {
+  .ProductMiniBox {
+    width: $miniBoxWidthMobile;
+    height: $miniBoxHeightMobile;
+    .ProductImg {
+      width: $miniBoxWidthMobile;
+      height: $prdctImgHeightMobile;
+      img,
+      svg {
+        width: $svgImgSizeSmall;
+        height: $svgImgSizeSmall;
+      }
+    }
+    .ProductDesc {
+      width: 100%;
+      height: 45px;
+      font-size: 0.9rem;
+    }
+  }
+}
+@media only screen and (max-width: 430px) {
+  .ProductMiniBox {
+    width: $miniBoxWidthMobile2;
+    height: $miniBoxWidthMobile2;
+    .ProductImg {
+      width: $miniBoxWidthMobile2;
+      height: $prdctImgHeightMobile2;
+      img,
+      svg {
+        width: $svgImgSizeSmall2;
+        height: $svgImgSizeSmall2;
+      }
+    }
+    .ProductDesc {
+      width: 100%;
+      height: 45px;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+    }
+    .ProductAddToCart {
+      font-size: 0.9rem;
+    }
+  }
+}

@@ -39,3 +39,42 @@
     }
   }
 }
+@media only screen and (max-width: 540px) {
+  .CategoryMiniBox {
+    width: $miniBoxWidthMobile;
+    height: $miniBoxHeightMobile;
+    .CategoryImg {
+      width: $miniBoxWidthMobile;
+      height: $svgImgSizeMedium;
+      img,
+      svg {
+        width: $svgImgSizeMedium;
+        height: $svgImgSizeMedium;
+      }
+    }
+    .CategoryDesc {
+      height: 20px;
+      padding-bottom: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 430px) {
+  .CategoryMiniBox {
+    width: $miniBoxWidthMobile2;
+    height: $miniBoxWidthMobile2;
+    .CategoryImg {
+      width: $miniBoxWidthMobile2;
+      height: 90px;
+      img,
+      svg {
+        width: 90px;
+        height: 90px;
+      }
+    }
+    .CategoryDesc {
+      height: 45px;
+      font-size: 0.9rem;
+      padding-bottom: 10px;
+    }
+  }
+}

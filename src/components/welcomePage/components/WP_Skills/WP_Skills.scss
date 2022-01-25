@@ -93,3 +93,31 @@
     }
   }
 }
+@media only screen and (max-width: 510px) {
+  .WP_SkillsConent {
+    .WP_SkillsBar {
+      width: 60px;
+      .EmptyBar_char {
+        width: 35px;
+        height: 140px;
+      }
+      & > span {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 410px) {
+  .WP_SkillsConent {
+    .WP_SkillsBar {
+      width: 60px;
+      .EmptyBar_char {
+        width: 30px;
+        height: 100px;
+      }
+      & > span {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
